@@ -1,960 +1,1887 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light dark" />
-  <title>个人简历 / 作品集 | 全屋定制高级设计师</title>
-  <meta name="description" content="于同兰｜全屋定制高级设计师个人简历与作品集：专注户型规划、收纳系统、柜体落地与交付，提供从量房到安装验收的全流程设计服务。" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>于同兰│固诺 CASA 首席设计师</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Noto+Sans+SC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#070A12;
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --faint: rgba(255,255,255,.48);
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.09);
-      --stroke: rgba(255,255,255,.12);
-      --brand:#8B5CF6;
-      --accent:#F472B6;
-      --good:#22C55E;
-      --shadow: 0 24px 64px rgba(0,0,0,.45);
-      --shadow2: 0 18px 48px rgba(0,0,0,.28);
-      --r-xl: 24px;
-      --r-lg: 18px;
-      --r-md: 14px;
-      --max: 1120px;
-      --ease: cubic-bezier(.2,.8,.2,1);
-    }
+<style>
+:root{
+--bg:#0a0a0a;
+--card:#121212;
+--text:#f2f2f2;
+--muted:#999;
+--gold:#D4AF37;
+--gold-dark:#B8941F;
+--border:rgba(255,255,255,.08);
+--accent:#1a1a1a;
+}
 
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#F6F7FB;
-        --text: rgba(17,24,39,.92);
-        --muted: rgba(17,24,39,.72);
-        --faint: rgba(17,24,39,.56);
-        --card: rgba(255,255,255,.70);
-        --card2: rgba(255,255,255,.88);
-        --stroke: rgba(17,24,39,.10);
-        --shadow: 0 24px 64px rgba(17,24,39,.14);
-        --shadow2: 0 18px 48px rgba(17,24,39,.10);
-      }
-    }
+*{box-sizing:border-box;margin:0;padding:0}
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, "Noto Sans SC", system-ui, -apple-system, Segoe UI, Roboto, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(1200px 600px at 10% 10%, rgba(139,92,246,.30), transparent 55%),
-        radial-gradient(1000px 520px at 90% 18%, rgba(244,114,182,.22), transparent 58%),
-        radial-gradient(900px 520px at 70% 90%, rgba(34,197,94,.16), transparent 55%),
-        var(--bg);
-      line-height:1.6;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      overflow-x:hidden;
-    }
+body{
+background:var(--bg);
+color:var(--text);
+font-family:"Noto Sans SC",sans-serif;
+line-height:1.9;
+overflow-x:hidden;
+}
 
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    button{font:inherit}
+body::before{
+content:'';
+position:fixed;
+top:0;left:0;right:0;bottom:0;
+background:
+radial-gradient(circle at 15% 50%, rgba(212,175,55,.03), transparent 40%),
+radial-gradient(circle at 85% 20%, rgba(212,175,55,.05), transparent 50%);
+pointer-events:none;
+z-index:1;
+}
 
-    .noise{
-      position:fixed; inset:0; pointer-events:none; opacity:.06; mix-blend-mode:overlay;
-      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/></filter><rect width="180" height="180" filter="url(%23n)" opacity=".8"/></svg>');
-    }
+.container{
+max-width:1200px;
+margin:0 auto;
+padding:0 24px;
+position:relative;
+z-index:2;
+}
 
-    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+.serif{font-family:"Playfair Display",serif}
+.mono{font-family:"Space Mono",monospace}
+.gold{color:var(--gold)}
+.upper{text-transform:uppercase;letter-spacing:2px}
 
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      background: color-mix(in srgb, var(--bg) 70%, transparent);
-      border-bottom:1px solid var(--stroke);
-    }
+/* ANIMATIONS */
+@keyframes fadeInUp{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
 
-    .topbar-inner{height:66px; display:flex; align-items:center; justify-content:space-between; gap:14px}
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
 
-    .brand{display:flex; align-items:center; gap:12px; min-width:190px}
-    .logo{
-      width:36px; height:36px; border-radius:12px;
-      background: conic-gradient(from 210deg, var(--brand), var(--accent), var(--good), var(--brand));
-      box-shadow: 0 10px 28px rgba(139,92,246,.25);
-      position:relative; overflow:hidden;
-    }
-    .logo:after{content:""; position:absolute; inset:1px; border-radius:11px; background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,0)); mix-blend-mode:overlay}
+@keyframes slideInLeft{
+from{opacity:0;transform:translateX(-50px)}
+to{opacity:1;transform:translateX(0)}
+}
 
-    .brand-title{display:flex; flex-direction:column; line-height:1.2}
-    .brand-title strong{font-size:14px; letter-spacing:.2px}
-    .brand-title span{font-size:12px; color:var(--muted)}
+@keyframes slideInRight{
+from{opacity:0;transform:translateX(50px)}
+to{opacity:1;transform:translateX(0)}
+}
 
-    .nav{display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end}
-    .nav a{padding:10px 12px; border-radius:999px; color:var(--muted); border:1px solid transparent; transition: background .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease); font-size:13px}
-    .nav a:hover{background:var(--card); border-color:var(--stroke); color:var(--text)}
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+}
 
-    .btn{padding:10px 14px; border-radius:999px; border:1px solid var(--stroke); background:var(--card); color:var(--text); box-shadow:var(--shadow2); cursor:pointer; transition: transform .18s var(--ease), background .25s var(--ease), border-color .25s var(--ease); font-size:13px; display:inline-flex; align-items:center; gap:10px; white-space:nowrap}
-    .btn:hover{transform: translateY(-1px); background:var(--card2); border-color: color-mix(in srgb, var(--stroke) 65%, transparent)}
-    .btn.primary{border-color: color-mix(in srgb, var(--brand) 55%, var(--stroke)); background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 70%, transparent), color-mix(in srgb, var(--accent) 35%, transparent)); box-shadow: 0 18px 48px rgba(139,92,246,.20)}
+@keyframes shimmer{
+0%{background-position:200% 0}
+100%{background-position:-200% 0}
+}
 
-    .kbd{font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--stroke); color:var(--muted); background: color-mix(in srgb, var(--card) 65%, transparent)}
+@keyframes rotate{
+from{transform:rotate(0deg)}
+to{transform:rotate(360deg)}
+}
 
-    .hero{padding:56px 0 16px}
-    .hero-grid{display:grid; grid-template-columns: 1.25fr .75fr; gap:22px; align-items:stretch}
+.animate-in{
+animation:fadeInUp 1s ease-out forwards;
+opacity:0;
+}
 
-    .card{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 88%, transparent); border-radius: var(--r-xl); box-shadow: var(--shadow); overflow:hidden; position:relative}
-    .card.pad{padding:26px}
+.delay-1{animation-delay:.2s}
+.delay-2{animation-delay:.4s}
+.delay-3{animation-delay:.6s}
+.delay-4{animation-delay:.8s}
+.delay-5{animation-delay:1s}
 
-    .eyebrow{display:inline-flex; align-items:center; gap:10px; font-size:12px; color:var(--muted); border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 65%, transparent); padding:8px 12px; border-radius:999px}
-    .dot{width:8px; height:8px; border-radius:50%; background: radial-gradient(circle at 30% 30%, #fff, color-mix(in srgb, var(--brand) 70%, #000)); box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 18%, transparent)}
+/* CURSOR */
+.cursor{
+width:20px;
+height:20px;
+border:2px solid var(--gold);
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+z-index:9999;
+transition:transform .15s ease;
+opacity:0;
+}
 
-    h1{font-size: clamp(28px, 4.4vw, 46px); line-height:1.1; margin:16px 0 12px; letter-spacing:-0.6px}
-    .lead{font-size:15px; color:var(--muted); margin:0 0 18px; max-width:56ch}
+.cursor-follower{
+width:40px;
+height:40px;
+border:1px solid rgba(212,175,55,.3);
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+z-index:9998;
+transition:transform .3s ease;
+opacity:0;
+}
 
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+/* NAV */
+.nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:100;
+background:rgba(10,10,10,.8);
+backdrop-filter:blur(20px);
+border-bottom:1px solid var(--border);
+transform:translateY(0);
+transition:transform .3s ease;
+}
 
-    .metrics{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:10px; margin-top:18px}
-    .metric{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 70%, transparent); border-radius: var(--r-lg); padding:14px; position:relative}
-    .metric strong{display:block; font-size:18px; letter-spacing:-0.4px}
-    .metric span{display:block; font-size:12px; color:var(--muted)}
+.nav.hidden{transform:translateY(-100%)}
 
-    .profile{height:100%; display:flex; flex-direction:column}
-    .profile-top{padding:18px 18px 0; display:flex; align-items:flex-start; justify-content:space-between; gap:12px}
-    .avatar{width:64px; height:64px; border-radius:22px; border:1px solid var(--stroke); background: radial-gradient(36px 36px at 30% 25%, rgba(255,255,255,.34), rgba(255,255,255,0) 60%), linear-gradient(135deg, color-mix(in srgb, var(--accent) 30%, transparent), color-mix(in srgb, var(--brand) 35%, transparent)), color-mix(in srgb, var(--card) 70%, transparent); box-shadow: 0 16px 44px rgba(0,0,0,.22); position:relative; overflow:hidden}
-    .avatar:before{content:""; position:absolute; inset:-20px; background: conic-gradient(from 10deg, rgba(255,255,255,0), rgba(255,255,255,.22), rgba(255,255,255,0)); animation: spin 8s linear infinite; opacity:.55}
-    @keyframes spin{to{transform: rotate(360deg)}}
+.nav .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:24px;
+}
 
-    .profile-meta{padding:10px 18px 18px}
-    .profile-meta h2{font-size:16px; margin:10px 0 4px; letter-spacing:-0.2px}
-    .profile-meta p{margin:0; color:var(--muted); font-size:13px}
+.brand{
+border:2px solid var(--gold);
+padding:8px 20px;
+color:var(--gold);
+font-weight:700;
+letter-spacing:3px;
+transition:all .3s ease;
+cursor:pointer;
+position:relative;
+overflow:hidden;
+}
 
-    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .chip{font-size:12px; padding:8px 10px; border-radius:999px; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 60%, transparent); color:var(--muted)}
+.brand::before{
+content:'';
+position:absolute;
+top:0;left:-100%;
+width:100%;height:100%;
+background:var(--gold);
+transition:left .4s ease;
+z-index:-1;
+}
 
-    .profile-bottom{margin-top:auto; padding:16px 18px 18px; border-top:1px solid var(--stroke); display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between}
-    .badge{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 65%, transparent); padding:8px 10px; border-radius:999px; font-size:12px; color:var(--muted); display:inline-flex; align-items:center; gap:8px}
-    .pulse{width:8px; height:8px; border-radius:50%; background:var(--good); box-shadow:0 0 0 0 color-mix(in srgb, var(--good) 40%, transparent); animation:pulse 1.8s var(--ease) infinite}
-    @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb, var(--good) 40%, transparent)}70%{box-shadow:0 0 0 12px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.brand:hover::before{left:0}
+.brand:hover{color:var(--bg)}
 
-    .section{padding:18px 0 8px}
-    .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin:22px 0 12px}
-    .section-head h3{margin:0; font-size:16px; letter-spacing:-0.2px}
-    .section-head p{margin:0; color:var(--muted); font-size:13px}
+.nav-links{
+display:flex;
+gap:40px;
+list-style:none;
+}
 
-    .grid{display:grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap:18px}
-    .span-7{grid-column: span 7}
-    .span-5{grid-column: span 5}
-    .span-6{grid-column: span 6}
+.nav-links a{
+color:var(--text);
+text-decoration:none;
+font-size:14px;
+letter-spacing:1px;
+transition:color .3s ease;
+position:relative;
+}
 
-    .about p{margin:0; color:var(--muted); font-size:14px}
+.nav-links a::after{
+content:'';
+position:absolute;
+bottom:-5px;
+left:0;
+width:0;
+height:2px;
+background:var(--gold);
+transition:width .3s ease;
+}
 
-    .list{display:flex; flex-direction:column; gap:10px; margin-top:14px}
-    .item{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 62%, transparent); border-radius: var(--r-lg); padding:14px; display:flex; gap:12px; align-items:flex-start}
-    .icon{width:38px; height:38px; border-radius:14px; border:1px solid var(--stroke); background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 26%, transparent), color-mix(in srgb, var(--accent) 18%, transparent)); display:grid; place-items:center; flex:0 0 auto; box-shadow: 0 14px 34px rgba(0,0,0,.18)}
-    .item h4{margin:0; font-size:14px; letter-spacing:-0.1px}
-    .item p{margin:2px 0 0; color:var(--muted); font-size:13px}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
 
-    .timeline{position:relative; padding-left:18px; display:flex; flex-direction:column; gap:12px; margin-top:10px}
-    .timeline:before{content:""; position:absolute; left:7px; top:6px; bottom:6px; width:2px; background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--brand) 45%, transparent), transparent)}
+/* 移动端菜单按钮 */
+.mobile-menu-btn{
+display:none;
+flex-direction:column;
+gap:5px;
+background:none;
+border:none;
+cursor:pointer;
+padding:5px;
+z-index:101;
+}
 
-    .t-item{position:relative; padding:14px; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 62%, transparent); border-radius: var(--r-lg)}
-    .t-item:before{content:""; position:absolute; left:-18px; top:18px; width:12px; height:12px; border-radius:50%; background: radial-gradient(circle at 30% 30%, #fff, color-mix(in srgb, var(--brand) 70%, #000)); box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 18%, transparent); border:1px solid var(--stroke)}
-    .t-item header{display:flex; justify-content:space-between; gap:12px; align-items:baseline; flex-wrap:wrap}
-    .t-item header strong{font-size:14px}
-    .t-item header span{font-size:12px; color:var(--muted)}
-    .t-item p{margin:8px 0 0; color:var(--muted); font-size:13px}
+.mobile-menu-btn span{
+width:25px;
+height:2px;
+background:var(--gold);
+transition:all .3s ease;
+}
 
-    .skills{display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:10px; margin-top:10px}
-    .skill{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 62%, transparent); border-radius: var(--r-lg); padding:14px}
-    .skill header{display:flex; justify-content:space-between; align-items:center; gap:10px}
-    .skill header strong{font-size:13px}
-    .skill header span{font-size:12px; color:var(--muted)}
-    .bar{margin-top:10px; height:10px; border-radius:999px; background: color-mix(in srgb, var(--card) 55%, transparent); border:1px solid var(--stroke); overflow:hidden}
-    .bar > i{display:block; height:100%; width: var(--w, 70%); border-radius:999px; background: linear-gradient(90deg, color-mix(in srgb, var(--brand) 70%, transparent), color-mix(in srgb, var(--accent) 55%, transparent)); box-shadow: 0 12px 30px rgba(139,92,246,.20)}
+.mobile-menu-btn.active span:nth-child(1){
+transform:rotate(45deg) translate(5px, 5px);
+}
 
-    .portfolio{display:grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap:18px}
-    .work{grid-column: span 4; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 60%, transparent); border-radius: var(--r-xl); overflow:hidden; cursor:pointer; transition: transform .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease); min-height: 220px}
-    .work:hover{transform: translateY(-3px); background: color-mix(in srgb, var(--card2) 70%, transparent); border-color: color-mix(in srgb, var(--stroke) 70%, transparent)}
+.mobile-menu-btn.active span:nth-child(2){
+opacity:0;
+}
 
-    .thumb{aspect-ratio: 16/10; border-bottom:1px solid var(--stroke); position:relative; overflow:hidden;
-      background: radial-gradient(120px 80px at 18% 20%, rgba(255,255,255,.22), transparent 60%),
-                  linear-gradient(135deg, rgba(139,92,246,.38), rgba(244,114,182,.22), rgba(34,197,94,.18));
-    }
+.mobile-menu-btn.active span:nth-child(3){
+transform:rotate(-45deg) translate(7px, -6px);
+}
 
-    .thumb svg{position:absolute; inset:0; width:100%; height:100%; opacity:.82}
+/* 移动端菜单 */
+.mobile-menu{
+position:fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(10,10,10,.98);
+backdrop-filter:blur(10px);
+z-index:99;
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+pointer-events:none;
+transition:opacity .3s ease;
+}
 
-    .thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition: transform .4s var(--ease)}
-    .work:hover .thumb img{transform: scale(1.05)}
+.mobile-menu.active{
+opacity:1;
+pointer-events:all;
+}
 
-    .work .body{padding:14px 14px 16px}
-    .work .body strong{display:block; font-size:14px}
-    .work .body span{display:block; margin-top:4px; font-size:12px; color:var(--muted)}
-    .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
-    .tag{font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 55%, transparent); color:var(--muted)}
+.mobile-nav-links{
+list-style:none;
+text-align:center;
+}
 
-    .posts{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:18px}
-    .post{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 60%, transparent); border-radius: var(--r-xl); overflow:hidden; transition: transform .22s var(--ease), background .22s var(--ease)}
-    .post:hover{transform: translateY(-3px); background: color-mix(in srgb, var(--card2) 70%, transparent)}
-    .post .head{padding:14px 14px 0; display:flex; gap:10px; align-items:flex-start}
-    .pill{padding:6px 10px; border-radius:999px; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 55%, transparent); color:var(--muted); font-size:12px; white-space:nowrap}
-    .post .body{padding:10px 14px 16px}
-    .post .body strong{display:block; font-size:14px}
-    .post .body p{margin:6px 0 0; color:var(--muted); font-size:13px}
-    .post .body a{display:inline-flex; margin-top:10px; color: color-mix(in srgb, var(--brand) 70%, var(--text)); font-size:13px}
+.mobile-nav-links li{
+margin:30px 0;
+}
 
-    .contact{display:grid; grid-template-columns: 1fr; gap:18px; align-items:stretch}
-    .field{display:flex; flex-direction:column; gap:8px; margin-bottom:12px}
-    label{font-size:12px; color:var(--muted)}
-    input, textarea{width:100%; border-radius:14px; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 60%, transparent); color:var(--text); padding:12px; outline:none; transition: border-color .2s var(--ease), background .2s var(--ease)}
-    textarea{min-height:120px; resize:vertical}
-    input:focus, textarea:focus{border-color: color-mix(in srgb, var(--brand) 55%, var(--stroke)); background: color-mix(in srgb, var(--card2) 70%, transparent)}
+.mobile-nav-links a{
+color:var(--text);
+text-decoration:none;
+font-size:24px;
+letter-spacing:2px;
+transition:color .3s ease;
+display:block;
+}
 
-    .footer{padding:26px 0 40px; color:var(--muted); font-size:12px}
-    .footer-inner{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center}
-    .sep{height:1px; background:var(--stroke); margin:18px 0 0}
+.mobile-nav-links a:hover{
+color:var(--gold);
+}
 
-    dialog{width:min(980px, calc(100% - 28px)); border:1px solid var(--stroke); border-radius: var(--r-xl); padding:0; background: color-mix(in srgb, var(--bg) 65%, transparent); color:var(--text); box-shadow: var(--shadow); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px)}
-    dialog::backdrop{background: rgba(0,0,0,.55)}
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+position:relative;
+padding-top:80px;
+}
 
-    .modal-head{padding:18px; border-bottom:1px solid var(--stroke); display:flex; justify-content:space-between; gap:12px; align-items:center}
-    .modal-head strong{font-size:14px}
-    .modal-body{padding:18px}
-    .modal-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:18px}
-    .mock{border:1px solid var(--stroke); border-radius: var(--r-lg); overflow:hidden; background: color-mix(in srgb, var(--card) 60%, transparent)}
-    .mock .mock-top{aspect-ratio: 16/10; background: linear-gradient(135deg, rgba(139,92,246,.38), rgba(244,114,182,.22), rgba(34,197,94,.18)); border-bottom:1px solid var(--stroke)}
-    .modal-body p{margin:0; color:var(--muted); font-size:13px}
+.hero::before{
+content:'';
+position:absolute;
+top:0;right:0;
+width:600px;
+height:600px;
+background:radial-gradient(circle, rgba(212,175,55,.15), transparent 70%);
+border-radius:50%;
+animation:float 6s ease-in-out infinite;
+pointer-events:none;
+}
 
-    .meta{
-      margin-top: 12px;
-      border: 1px solid var(--stroke);
-      background: color-mix(in srgb, var(--card) 55%, transparent);
-      border-radius: var(--r-lg);
-      overflow: hidden;
-    }
+.hero-grid{
+display:grid;
+grid-template-columns:1.3fr .7fr;
+gap:80px;
+align-items:center;
+}
 
-    .meta-row{
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 12px;
-      padding: 12px 12px;
-      border-top: 1px solid var(--stroke);
-      align-items: start;
-    }
+.hero-content{position:relative;z-index:2}
 
-    .meta-row:first-child{border-top:0}
-    .meta-row .k{font-size: 12px; color: var(--muted)}
-    .meta-row .v{font-size: 13px; color: var(--text)}
+.hero-badge{
+display:inline-block;
+background:linear-gradient(135deg, rgba(212,175,55,.2), rgba(212,175,55,.05));
+border:1px solid var(--gold);
+padding:8px 20px;
+font-size:11px;
+letter-spacing:2px;
+margin-bottom:30px;
+}
 
-    .xbtn{border:1px solid var(--stroke); background: var(--card); color:var(--text); border-radius: 12px; padding:10px 12px; cursor:pointer; transition: transform .18s var(--ease), background .25s var(--ease)}
-    .xbtn:hover{transform: translateY(-1px); background: var(--card2)}
+.hero h1{
+font-size:72px;
+line-height:1.1;
+font-weight:400;
+margin-bottom:30px;
+}
 
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr;}
-      .posts{grid-template-columns: 1fr;}
-      .portfolio{grid-template-columns: repeat(12, minmax(0,1fr));}
-      .work{grid-column: span 6;}
-      .modal-grid{grid-template-columns: 1fr}
-    }
-    @media (max-width: 620px){
-      .work{grid-column: span 12;}
-    }
-    @media (max-width: 720px){
-      .metrics{grid-template-columns: 1fr;}
-      .grid{grid-template-columns: 1fr;}
-      .span-7,.span-5,.span-6{grid-column: auto;}
-      .nav{display:none;}
-    }
+.hero h1 .highlight{
+background:linear-gradient(135deg, var(--gold), var(--gold-dark));
+-webkit-background-clip:text;
+background-clip:text;
+-webkit-text-fill-color:transparent;
+font-weight:800;
+}
 
-    @media (prefers-reduced-motion: reduce){
-      *{animation:none !important; transition:none !important}
-    }
-  </style>
+.hero-desc{
+color:var(--muted);
+max-width:580px;
+font-size:17px;
+line-height:1.8;
+margin-bottom:40px;
+}
+
+.hero-stats{
+display:flex;
+gap:60px;
+margin-top:50px;
+}
+
+.stat{
+border-left:3px solid var(--gold);
+padding-left:20px;
+}
+
+.stat-number{
+font-size:42px;
+font-weight:700;
+color:var(--gold);
+font-family:"Space Mono",monospace;
+line-height:1;
+}
+
+.stat-label{
+font-size:13px;
+color:var(--muted);
+text-transform:uppercase;
+letter-spacing:1px;
+margin-top:8px;
+}
+
+.hero-image-wrap{
+position:relative;
+}
+
+.hero-img{
+width:100%;
+height:80vh;
+object-fit:cover;
+filter:grayscale(20%) contrast(115%) brightness(90%);
+box-shadow:-50px 50px 0 rgba(15,15,15,.95);
+transition:all .6s ease;
+}
+
+.hero-img:hover{
+filter:grayscale(0%) contrast(110%) brightness(100%);
+transform:scale(1.02);
+}
+
+.hero-decoration{
+position:absolute;
+top:-30px;
+right:-30px;
+width:200px;
+height:200px;
+border:1px solid rgba(212,175,55,.3);
+border-radius:50%;
+animation:rotate 20s linear infinite;
+}
+
+.hero-decoration::before{
+content:'';
+position:absolute;
+top:20px;left:20px;right:20px;bottom:20px;
+border:1px solid rgba(212,175,55,.2);
+border-radius:50%;
+}
+
+.cta-group{
+display:flex;
+gap:20px;
+margin-top:40px;
+}
+
+.btn{
+padding:16px 40px;
+font-size:14px;
+letter-spacing:1px;
+border:none;
+cursor:pointer;
+transition:all .3s ease;
+text-decoration:none;
+display:inline-block;
+font-weight:600;
+text-transform:uppercase;
+}
+
+.btn-primary{
+background:var(--gold);
+color:var(--bg);
+}
+
+.btn-primary:hover{
+background:var(--gold-dark);
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(212,175,55,.3);
+}
+
+.btn-outline{
+background:transparent;
+color:var(--gold);
+border:2px solid var(--gold);
+}
+
+.btn-outline:hover{
+background:var(--gold);
+color:var(--bg);
+transform:translateY(-3px);
+}
+
+/* SECTION */
+.section{
+padding:140px 0;
+border-top:1px solid var(--border);
+position:relative;
+}
+
+.section.dark{
+background:linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
+}
+
+.section-number{
+position:absolute;
+top:60px;
+right:60px;
+font-size:180px;
+font-weight:800;
+color:rgba(255,255,255,.02);
+font-family:"Space Mono",monospace;
+pointer-events:none;
+}
+
+.head{
+text-align:center;
+margin-bottom:90px;
+}
+
+.head-badge{
+display:inline-block;
+font-size:11px;
+color:var(--gold);
+background:rgba(212,175,55,.1);
+padding:6px 16px;
+margin-bottom:20px;
+letter-spacing:2px;
+border-radius:20px;
+}
+
+.head h2{
+font-size:48px;
+margin:0;
+font-weight:400;
+}
+
+.head p{
+color:var(--muted);
+max-width:700px;
+margin:20px auto 0;
+font-size:16px;
+}
+
+/* IDENTITY */
+.identity-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:100px;
+align-items:center;
+}
+
+.identity-left h2{
+font-size:52px;
+line-height:1.2;
+margin-bottom:30px;
+}
+
+.identity-left .divider{
+width:80px;
+height:3px;
+background:var(--gold);
+margin:40px 0;
+}
+
+.identity-right{
+color:#bbb;
+}
+
+.identity-list{
+list-style:none;
+}
+
+.identity-list li{
+padding:24px 0;
+border-bottom:1px solid var(--border);
+display:flex;
+align-items:center;
+transition:all .3s ease;
+}
+
+.identity-list li:hover{
+padding-left:20px;
+color:var(--text);
+}
+
+.identity-list li::before{
+content:'→';
+color:var(--gold);
+margin-right:20px;
+font-size:20px;
+transition:transform .3s ease;
+}
+
+.identity-list li:hover::before{
+transform:translateX(5px);
+}
+
+/* PHILOSOPHY */
+.philosophy-wrap{
+background:rgba(212,175,55,.03);
+border:1px solid var(--border);
+padding:80px 60px;
+position:relative;
+overflow:hidden;
+}
+
+.philosophy-wrap::before{
+content:'"';
+position:absolute;
+top:20px;
+left:40px;
+font-size:200px;
+color:rgba(212,175,55,.1);
+font-family:"Playfair Display",serif;
+line-height:1;
+}
+
+.philosophy-grid{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:80px;
+position:relative;
+z-index:2;
+}
+
+.philosophy-quote{
+font-size:38px;
+line-height:1.4;
+font-weight:300;
+}
+
+.philosophy-content p{
+margin-bottom:20px;
+color:#aaa;
+}
+
+.philosophy-signature{
+margin-top:40px;
+font-family:"Playfair Display",serif;
+font-size:24px;
+color:var(--gold);
+}
+
+/* METHODOLOGY */
+.method-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+gap:30px;
+}
+
+.method-card{
+background:var(--card);
+border:1px solid var(--border);
+padding:50px 40px;
+transition:all .4s ease;
+position:relative;
+overflow:hidden;
+}
+
+.method-card::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(90deg, transparent, rgba(212,175,55,.1), transparent);
+transition:left .6s ease;
+}
+
+.method-card:hover::before{
+left:100%;
+}
+
+.method-card:hover{
+border-color:var(--gold);
+transform:translateY(-10px);
+box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+.method-number{
+font-size:72px;
+font-weight:800;
+color:rgba(212,175,55,.2);
+font-family:"Space Mono",monospace;
+line-height:1;
+margin-bottom:20px;
+transition:color .3s ease;
+}
+
+.method-card:hover .method-number{
+color:var(--gold);
+}
+
+.method-card h4{
+font-size:22px;
+margin-bottom:16px;
+font-weight:600;
+}
+
+.method-card p{
+color:var(--muted);
+line-height:1.7;
+}
+
+/* PROCESS */
+.process-timeline{
+position:relative;
+padding-left:60px;
+}
+
+.process-timeline::before{
+content:'';
+position:absolute;
+left:20px;
+top:0;
+bottom:0;
+width:2px;
+background:linear-gradient(180deg, var(--gold), transparent);
+}
+
+.process-step{
+position:relative;
+margin-bottom:60px;
+padding:30px 40px;
+background:rgba(212,175,55,.03);
+border-left:3px solid var(--gold);
+transition:all .3s ease;
+}
+
+.process-step::before{
+content:'';
+position:absolute;
+left:-63px;
+top:35px;
+width:15px;
+height:15px;
+background:var(--gold);
+border-radius:50%;
+border:3px solid var(--bg);
+}
+
+.process-step:hover{
+background:rgba(212,175,55,.08);
+transform:translateX(10px);
+}
+
+.process-year{
+font-size:13px;
+color:var(--gold);
+font-weight:700;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+.process-step h4{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.process-step p{
+color:var(--muted);
+}
+
+/* EXPERTISE */
+.expertise-grid{
+display:grid;
+grid-template-columns:repeat(2, 1fr);
+gap:40px;
+}
+
+.expertise-item{
+background:linear-gradient(135deg, rgba(212,175,55,.05), transparent);
+border:1px solid var(--border);
+padding:40px;
+transition:all .4s ease;
+}
+
+.expertise-item:hover{
+background:linear-gradient(135deg, rgba(212,175,55,.12), transparent);
+border-color:var(--gold);
+transform:scale(1.02);
+}
+
+.expertise-icon{
+width:60px;
+height:60px;
+background:var(--gold);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+margin-bottom:24px;
+color:var(--bg);
+}
+
+.expertise-item h4{
+font-size:22px;
+margin-bottom:16px;
+}
+
+.expertise-item p{
+color:var(--muted);
+line-height:1.7;
+}
+
+.expertise-tags{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:20px;
+}
+
+.tag{
+font-size:11px;
+padding:6px 14px;
+background:rgba(212,175,55,.15);
+border:1px solid rgba(212,175,55,.3);
+color:var(--gold);
+letter-spacing:1px;
+border-radius:3px;
+}
+
+/* PORTFOLIO */
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
+gap:40px;
+}
+
+.work{
+position:relative;
+overflow:hidden;
+cursor:pointer;
+}
+
+.work-img{
+width:100%;
+aspect-ratio:16/11;
+object-fit:cover;
+filter:brightness(.8) grayscale(.3);
+transition:all .5s ease;
+}
+
+.work:hover .work-img{
+filter:brightness(1) grayscale(0);
+transform:scale(1.08);
+}
+
+.work-overlay{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+padding:40px;
+background:linear-gradient(to top, rgba(0,0,0,.95), transparent);
+transform:translateY(20px);
+opacity:0;
+transition:all .5s ease;
+}
+
+.work:hover .work-overlay{
+transform:translateY(0);
+opacity:1;
+}
+
+.work-category{
+font-size:11px;
+color:var(--gold);
+letter-spacing:2px;
+text-transform:uppercase;
+margin-bottom:10px;
+}
+
+.work-title{
+font-size:22px;
+font-weight:600;
+color:var(--text);
+margin-bottom:8px;
+}
+
+.work-desc{
+font-size:14px;
+color:var(--muted);
+}
+
+/* TESTIMONIALS */
+.testimonial-slider{
+max-width:900px;
+margin:0 auto;
+text-align:center;
+}
+
+.testimonial{
+padding:60px;
+background:rgba(212,175,55,.03);
+border:1px solid var(--border);
+position:relative;
+}
+
+.testimonial::before{
+content:'"';
+position:absolute;
+top:-20px;
+left:50%;
+transform:translateX(-50%);
+font-size:120px;
+color:var(--gold);
+font-family:"Playfair Display",serif;
+line-height:1;
+opacity:.3;
+}
+
+.testimonial-text{
+font-size:24px;
+line-height:1.6;
+font-style:italic;
+color:var(--text);
+margin-bottom:30px;
+}
+
+.testimonial-author{
+font-size:16px;
+color:var(--gold);
+font-weight:600;
+}
+
+.testimonial-role{
+font-size:13px;
+color:var(--muted);
+margin-top:5px;
+}
+
+/* SERVICES */
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:2px;
+background:var(--border);
+}
+
+.service-card{
+background:var(--card);
+padding:60px 40px;
+text-align:center;
+transition:all .4s ease;
+position:relative;
+overflow:hidden;
+}
+
+.service-card::before{
+content:'';
+position:absolute;
+bottom:-100%;
+left:0;
+right:0;
+height:3px;
+background:var(--gold);
+transition:bottom .4s ease;
+}
+
+.service-card:hover::before{
+bottom:0;
+}
+
+.service-card:hover{
+background:rgba(212,175,55,.05);
+transform:translateY(-5px);
+}
+
+.service-icon{
+font-size:48px;
+margin-bottom:24px;
+}
+
+.service-card h4{
+font-size:20px;
+margin-bottom:16px;
+}
+
+.service-card p{
+color:var(--muted);
+font-size:14px;
+line-height:1.7;
+}
+
+/* AWARDS */
+.awards-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+gap:30px;
+}
+
+.award-item{
+text-align:center;
+padding:40px 30px;
+border:1px solid var(--border);
+transition:all .3s ease;
+}
+
+.award-item:hover{
+border-color:var(--gold);
+background:rgba(212,175,55,.03);
+}
+
+.award-year{
+font-size:48px;
+font-weight:700;
+color:var(--gold);
+font-family:"Space Mono",monospace;
+margin-bottom:16px;
+}
+
+.award-title{
+font-size:16px;
+font-weight:600;
+margin-bottom:8px;
+}
+
+.award-org{
+font-size:13px;
+color:var(--muted);
+}
+
+/* CONTACT */
+.contact-section{
+text-align:center;
+}
+
+.contact-box{
+display:inline-flex;
+gap:60px;
+align-items:center;
+border:2px solid var(--gold);
+padding:60px 80px;
+background:linear-gradient(135deg, rgba(212,175,55,.05), transparent);
+margin-top:40px;
+}
+
+.qr{
+width:180px;
+height:180px;
+background:#fff;
+padding:10px;
+border-radius:10px;
+}
+
+.qr img{
+width:100%;
+height:100%;
+}
+
+.contact-info{
+text-align:left;
+}
+
+.contact-info h3{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.contact-detail{
+display:flex;
+align-items:center;
+gap:15px;
+margin:16px 0;
+font-size:16px;
+color:var(--muted);
+transition:color .3s ease;
+}
+
+.contact-detail:hover{
+color:var(--gold);
+}
+
+.contact-detail::before{
+content:'→';
+color:var(--gold);
+font-size:18px;
+}
+
+/* FOOTER */
+.footer{
+padding:60px 0 40px;
+background:linear-gradient(to top, #1a1a1a, #0a0a0a);
+border-top:1px solid var(--border);
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:60px;
+margin-bottom:60px;
+}
+
+.footer-brand{
+}
+
+.footer-brand h3{
+font-size:28px;
+margin-bottom:16px;
+}
+
+.footer-brand p{
+color:var(--muted);
+line-height:1.8;
+max-width:300px;
+}
+
+.footer-section h4{
+font-size:16px;
+margin-bottom:20px;
+color:var(--gold);
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+.footer-links{
+list-style:none;
+}
+
+.footer-links li{
+margin-bottom:12px;
+}
+
+.footer-links a{
+color:var(--muted);
+text-decoration:none;
+transition:color .3s ease;
+font-size:14px;
+}
+
+.footer-links a:hover{
+color:var(--gold);
+}
+
+.footer-bottom{
+text-align:center;
+padding-top:40px;
+border-top:1px solid var(--border);
+color:#444;
+font-size:13px;
+}
+
+.footer-social{
+display:flex;
+gap:20px;
+margin-top:20px;
+}
+
+.social-link{
+width:40px;
+height:40px;
+border:1px solid var(--border);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:var(--muted);
+text-decoration:none;
+transition:all .3s ease;
+}
+
+.social-link:hover{
+border-color:var(--gold);
+color:var(--gold);
+transform:translateY(-3px);
+}
+
+/* RESPONSIVE */
+/* RESPONSIVE */
+@media(max-width:1024px){
+.hero h1{font-size:56px}
+.hero-grid,.identity-grid,.philosophy-grid{grid-template-columns:1fr}
+.hero-image-wrap{order:-1}
+.hero-img{height:60vh}
+.services-grid{grid-template-columns:repeat(2, 1fr)}
+.footer-grid{grid-template-columns:1fr 1fr}
+.section{padding:100px 0}
+.section-number{font-size:140px}
+}
+
+@media(max-width:768px){
+/* 导航 */
+.nav .container{padding:20px 24px}
+.nav-links{display:none}
+.mobile-menu-btn{display:flex}
+.brand{font-size:12px;padding:6px 12px}
+
+/* Hero */
+.hero{padding-top:60px}
+.hero h1{font-size:38px;line-height:1.2}
+.hero-desc{font-size:15px}
+.hero-stats{flex-direction:column;gap:30px;margin-top:30px}
+.hero-img{height:50vh;box-shadow:-30px 30px 0 rgba(15,15,15,.95)}
+.hero-decoration{width:150px;height:150px;top:-20px;right:-20px}
+.cta-group{flex-direction:column;gap:15px}
+.btn{padding:14px 32px;font-size:13px;width:100%}
+
+/* 区块 */
+.section{padding:80px 0}
+.section-number{font-size:80px;right:10px;top:40px;opacity:.5}
+.head h2{font-size:36px}
+.head p{font-size:15px}
+
+/* 网格 */
+.method-grid,.portfolio-grid,.expertise-grid{grid-template-columns:1fr;gap:20px}
+.services-grid{grid-template-columns:1fr;gap:1px}
+.awards-grid{grid-template-columns:1fr}
+
+/* 卡片 */
+.method-card{padding:40px 30px}
+.method-number{font-size:56px}
+.expertise-item{padding:30px}
+.service-card{padding:40px 30px}
+
+/* 身份 */
+.identity-left h2{font-size:36px}
+.identity-list li{font-size:14px;padding:20px 0}
+
+/* 哲学 */
+.philosophy-wrap{padding:50px 30px}
+.philosophy-quote{font-size:28px}
+
+/* 时间线 */
+.process-timeline{padding-left:30px}
+.process-timeline::before{left:10px}
+.process-step{padding:24px 30px;margin-bottom:40px}
+.process-step::before{left:-53px;width:12px;height:12px}
+
+/* 联系 */
+.contact-box{flex-direction:column;padding:40px 30px;gap:30px}
+.qr{width:150px;height:150px}
+.contact-info h3{font-size:28px;text-align:center}
+.contact-detail{font-size:14px}
+
+/* 作品集 */
+.work-overlay{padding:30px 20px}
+.work-title{font-size:18px}
+
+/* Footer */
+.footer-grid{grid-template-columns:1fr;gap:40px;text-align:center}
+.footer-social{justify-content:center}
+.footer-links{text-align:center}
+
+/* 自定义光标隐藏 */
+.cursor,.cursor-follower{display:none}
+}
+
+@media(max-width:480px){
+.hero h1{font-size:32px}
+.hero-desc{font-size:14px}
+.stat-number{font-size:36px}
+.stat-label{font-size:11px}
+.head h2{font-size:28px}
+.method-card h4{font-size:18px}
+.contact-info h3{font-size:24px}
+.philosophy-quote{font-size:24px}
+.container{padding:0 16px}
+}
+
+/* SCROLL ANIMATIONS */
+.scroll-reveal{
+opacity:0;
+transform:translateY(50px);
+transition:all .8s ease;
+}
+
+.scroll-reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+</style>
 </head>
+
 <body>
-  <div class="noise" aria-hidden="true"></div>
 
-  <header class="topbar">
-    <div class="container">
-      <div class="topbar-inner">
-        <a class="brand" href="#top" aria-label="返回顶部">
-          <div class="logo" aria-hidden="true"></div>
-          <div class="brand-title">
-            <strong id="name">于同兰</strong>
-            <span>全屋定制设计师 · 资深方案落地 · 中国</span>
-          </div>
-        </a>
+<!-- CUSTOM CURSOR -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
 
-        <nav class="nav" aria-label="页面导航">
-          <a href="#about">关于</a>
-          <a href="#experience">经历</a>
-          <a href="#skills">技能</a>
-          <a href="#portfolio">作品</a>
-          <a href="#posts">随笔</a>
-          <a href="#contact">联系</a>
-        </nav>
+<!-- NAV -->
+<nav class="nav">
+<div class="container">
+<div class="brand">YU TONGLAN</div>
+<ul class="nav-links">
+<li><a href="#about">关于</a></li>
+<li><a href="#method">方法论</a></li>
+<li><a href="#works">作品</a></li>
+<li><a href="#contact">联系</a></li>
+</ul>
+<button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="菜单">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</nav>
 
-        <div style="display:flex; gap:10px; align-items:center;">
-          <button class="btn" id="copyEmailBtn" type="button" title="复制邮箱">
-            复制邮箱
-            <span class="kbd">Ctrl+C</span>
-          </button>
-          <a class="btn primary" href="#contact">合作咨询</a>
-        </div>
-      </div>
-    </div>
-  </header>
+<!-- 移动端菜单 -->
+<div class="mobile-menu" id="mobileMenu">
+<ul class="mobile-nav-links">
+<li><a href="#about" onclick="toggleMobileMenu()">关于</a></li>
+<li><a href="#method" onclick="toggleMobileMenu()">方法论</a></li>
+<li><a href="#works" onclick="toggleMobileMenu()">作品</a></li>
+<li><a href="#contact" onclick="toggleMobileMenu()">联系</a></li>
+</ul>
+</div>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="card pad">
-            <div class="eyebrow"><span class="dot" aria-hidden="true"></span> 专注全屋定制与收纳系统 · 方案可落地、交付可追踪</div>
-            <h1>用更懂生活的户型规划，
-              <span style="color: color-mix(in srgb, var(--brand) 70%, var(--text));">让家的每一寸都更好用</span>
-            </h1>
-            <p class="lead">我是于同兰，全屋定制高级设计师。长期服务改善型住宅与精装改造，擅长户型动线与收纳规划、柜体系统设计（衣柜/橱柜/书柜/衣帽间）、材质工艺与五金配置、现场交底与安装验收。工作方式偏“清晰需求 + 清晰预算 + 清晰交付”：让方案不仅好看，更能按期落地。</p>
+<!-- HERO -->
+<header class="hero" id="home">
+<div class="container hero-grid">
+<div class="hero-content">
+<div class="hero-badge upper animate-in">Chief Designer Portfolio</div>
+<h1 class="serif animate-in delay-1">
+Design as a<br>
+<span class="highlight">System</span>,<br>
+not Decoration
+</h1>
+<div class="hero-desc animate-in delay-2">
+我不为风格服务,而为<strong>长期居住价值</strong>负责。
+在固诺 CASA,我负责的是从设计逻辑、产品系统到落地结果的
+<strong>整体决策与方法论执行</strong>。
+</div>
+<div class="hero-stats animate-in delay-3">
+<div class="stat">
+<div class="stat-number">10+</div>
+<div class="stat-label">Years Experience</div>
+</div>
+<div class="stat">
+<div class="stat-number">200+</div>
+<div class="stat-label">Projects Completed</div>
+</div>
+<div class="stat">
+<div class="stat-number">98%</div>
+<div class="stat-label">Client Satisfaction</div>
+</div>
+</div>
+<div class="cta-group animate-in delay-4">
+<a href="#works" class="btn btn-primary">查看作品</a>
+<a href="#contact" class="btn btn-outline">联系咨询</a>
+</div>
+</div>
+<div class="hero-image-wrap animate-in delay-2">
+<img class="hero-img" src="data:image/jpeg;base64,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" alt="于同兰 设计师">
+<div class="hero-decoration"></div>
+</div>
+</div>
+</header>
 
-            <div class="hero-actions">
-              <a class="btn primary" href="#portfolio">查看精选作品</a>
-              <button class="btn" type="button" id="downloadBtn">导出 PDF / 打印</button>
-              <span class="badge"><span class="pulse" aria-hidden="true"></span> 可承接长期/项目制合作</span>
-            </div>
+<!-- IDENTITY -->
+<section class="section" id="about">
+<div class="container">
+<div class="section-number">01</div>
+<div class="identity-grid">
+<div class="identity-left scroll-reveal">
+<h2 class="serif">
+我在固诺 CASA<br>
+负责什么?
+</h2>
+<div class="divider"></div>
+<p style="color:#999;line-height:1.8">
+作为首席设计师,我的核心职责不仅是创造美学,
+更是构建一套可持续、可复制、可落地的
+<strong style="color:var(--gold)">设计系统与产品标准</strong>。
+</p>
+</div>
+<div class="identity-right scroll-reveal">
+<ul class="identity-list">
+<li>高端定制产品体系与设计标准制定</li>
+<li>柜 / 墙 / 门 / 灯光一体化系统逻辑搭建</li>
+<li>样板空间、重点项目的最终设计把控</li>
+<li>复杂项目工艺节点与落地方案决策</li>
+<li>团队设计能力培养与质量审核</li>
+<li>客户需求深度转译与系统化解决</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 
-            <div class="metrics" aria-label="关键数据">
-              <div class="metric"><strong>10+</strong><span>年全屋定制设计经验</span></div>
-              <div class="metric"><strong>200+</strong><span>户型方案与落地交付</span></div>
-              <div class="metric"><strong>4+</strong><span>专长方向：收纳 / 动线 / 柜体系统 / 落地交付</span></div>
-            </div>
-          </div>
+<!-- PHILOSOPHY -->
+<section class="section dark">
+<div class="container">
+<div class="section-number">02</div>
+<div class="philosophy-wrap scroll-reveal">
+<div class="philosophy-grid">
+<div class="philosophy-quote serif">
+设计不是灵感,<br>
+而是一连串<strong class="gold">正确判断</strong>的结果。
+</div>
+<div class="philosophy-content">
+<p>我更关注:</p>
+<p>这个空间 10 年后是否依然成立?</p>
+<p>是否具备系统延展能力?<br>
+是否能在工厂、现场被准确复现?</p>
+<p>是否经得起时间与使用的检验?</p>
+<div class="philosophy-signature">— 于同兰</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-          <aside class="card profile" aria-label="个人信息卡">
-            <div class="profile-top">
-              <div>
-                <div class="avatar" aria-hidden="true"></div>
-              </div>
-              <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; justify-content:flex-end;">
-                <span class="badge">上海 / 可远程</span>
-                <span class="badge">中文 / English</span>
-              </div>
-            </div>
+<!-- EXPERTISE -->
+<section class="section">
+<div class="container">
+<div class="section-number">03</div>
+<div class="head scroll-reveal">
+<div class="head-badge upper">Core Expertise</div>
+<h2 class="serif">核心专业能力</h2>
+<p>经过十余年高端定制实践,形成系统化的设计能力与方法论</p>
+</div>
+<div class="expertise-grid">
+<div class="expertise-item scroll-reveal">
+<div class="expertise-icon">🎯</div>
+<h4>系统化设计思维</h4>
+<p>不做单一空间设计,而是构建完整的产品系统逻辑,确保设计可复制、可延展、可落地。</p>
+<div class="expertise-tags">
+<span class="tag">产品标准化</span>
+<span class="tag">模块化设计</span>
+<span class="tag">系统整合</span>
+</div>
+</div>
+<div class="expertise-item scroll-reveal">
+<div class="expertise-icon">⚙️</div>
+<h4>工艺与落地把控</h4>
+<p>深度理解材料特性与加工工艺,确保设计方案在工厂与现场的精准实现。</p>
+<div class="expertise-tags">
+<span class="tag">工艺节点</span>
+<span class="tag">材料应用</span>
+<span class="tag">现场管控</span>
+</div>
+</div>
+<div class="expertise-item scroll-reveal">
+<div class="expertise-icon">📐</div>
+<h4>空间结构判断</h4>
+<p>比例、动线、承重优先于风格,从建筑本质出发进行空间规划与优化。</p>
+<div class="expertise-tags">
+<span class="tag">结构分析</span>
+<span class="tag">动线规划</span>
+<span class="tag">比例控制</span>
+</div>
+</div>
+<div class="expertise-item scroll-reveal">
+<div class="expertise-icon">✨</div>
+<h4>材质与细节精研</h4>
+<p>材质不是好坏,而是位置。理解每种材料的最佳应用场景与组合逻辑。</p>
+<div class="expertise-tags">
+<span class="tag">材质搭配</span>
+<span class="tag">细节设计</span>
+<span class="tag">质感营造</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-            <div class="profile-meta">
-              <h2>于同兰 · 全屋定制高级设计师</h2>
-              <p>户型规划 / 收纳系统 / 柜体结构与工艺 / 五金配置 / 现场交底与验收</p>
+<!-- METHODOLOGY -->
+<section class="section dark">
+<div class="container">
+<div class="section-number">04</div>
+<div class="head scroll-reveal">
+<div class="head-badge upper">Methodology</div>
+<h2 class="serif">高定整案五步法</h2>
+<p>经过数百个项目验证的系统化设计流程</p>
+</div>
+<div class="method-grid">
+<div class="method-card scroll-reveal">
+<div class="method-number">01</div>
+<h4>结构判断</h4>
+<p>比例、动线、承重优先于风格。先解决空间本质问题,再考虑表现形式。</p>
+</div>
+<div class="method-card scroll-reveal">
+<div class="method-number">02</div>
+<h4>系统规划</h4>
+<p>柜墙门灯必须统一逻辑。建立模块化设计系统,确保各元素协调统一。</p>
+</div>
+<div class="method-card scroll-reveal">
+<div class="method-number">03</div>
+<h4>材质策略</h4>
+<p>材质不是好坏,而是位置。根据功能与氛围需求,精准配置材料组合。</p>
+</div>
+<div class="method-card scroll-reveal">
+<div class="method-number">04</div>
+<h4>工艺验证</h4>
+<p>节点先在工厂跑通。提前解决工艺难题,避免现场返工与妥协。</p>
+</div>
+<div class="method-card scroll-reveal">
+<div class="method-number">05</div>
+<h4>现场校准</h4>
+<p>设计师必须到场修正。在实际空间中微调比例、材质与细节。</p>
+</div>
+</div>
+</div>
+</section>
 
-              <div class="chips" aria-label="关键词">
-                <span class="chip">收纳规划</span>
-                <span class="chip">动线优化</span>
-                <span class="chip">预算可控</span>
-                <span class="chip">落地交付</span>
-              </div>
-            </div>
+<!-- PROCESS TIMELINE -->
+<section class="section">
+<div class="container">
+<div class="section-number">05</div>
+<div class="head scroll-reveal">
+<div class="head-badge upper">Career Journey</div>
+<h2 class="serif">设计履历</h2>
+<p>从一线设计师到首席设计官的专业成长路径</p>
+</div>
+<div class="process-timeline">
+<div class="process-step scroll-reveal">
+<div class="process-year">2012 — 2014</div>
+<h4>高端定制一线设计师</h4>
+<p>负责别墅与样板房项目,积累空间设计与客户沟通经验,形成对高端定制的初步认知。</p>
+</div>
+<div class="process-step scroll-reveal">
+<div class="process-year">2015 — 2018</div>
+<h4>整案深化负责人</h4>
+<p>专攻复杂工艺与系统收口,深入研究材料特性与加工工艺,建立工程化设计思维。</p>
+</div>
+<div class="process-step scroll-reveal">
+<div class="process-year">2019 — 至今</div>
+<h4>固诺 CASA 首席设计师</h4>
+<p>产品与设计双线负责人,制定设计标准与产品体系,带领团队完成200+高端定制项目。</p>
+</div>
+</div>
+</div>
+</section>
 
-            <div class="profile-bottom">
-              <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                <span class="badge">邮箱：<span id="email">hello@yourdomain.com</span></span>
-                <span class="badge">微信：DOM-Nov11</span>
-              </div>
-              <a class="btn" href="#contact">联系我</a>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
+<!-- SERVICES -->
+<section class="section dark">
+<div class="container">
+<div class="section-number">06</div>
+<div class="head scroll-reveal">
+<div class="head-badge upper">Services</div>
+<h2 class="serif">服务范围</h2>
+</div>
+<div class="services-grid">
+<div class="service-card scroll-reveal">
+<div class="service-icon">🏠</div>
+<h4>别墅整案设计</h4>
+<p>从空间规划到落地实施的全流程设计服务,确保设计理念完整实现。</p>
+</div>
+<div class="service-card scroll-reveal">
+<div class="service-icon">🎨</div>
+<h4>产品系统研发</h4>
+<p>定制化产品体系设计,建立标准化模块与个性化组合的平衡系统。</p>
+</div>
+<div class="service-card scroll-reveal">
+<div class="service-icon">📋</div>
+<h4>设计咨询顾问</h4>
+<p>为设计团队提供方法论培训,项目疑难问题解决方案与质量把控。</p>
+</div>
+<div class="service-card scroll-reveal">
+<div class="service-icon">🔧</div>
+<h4>工艺节点优化</h4>
+<p>复杂工艺节点的深化设计与现场问题解决,确保施工质量与效果。</p>
+</div>
+<div class="service-card scroll-reveal">
+<div class="service-icon">💎</div>
+<h4>样板空间打造</h4>
+<p>高标准样板间设计与落地,展现品牌调性与设计能力的标杆项目。</p>
+</div>
+<div class="service-card scroll-reveal">
+<div class="service-icon">🎯</div>
+<h4>私宅定制服务</h4>
+<p>针对高净值客户的深度定制服务,从需求挖掘到生活方式营造。</p>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h3>关于我</h3>
-            <p>定位、方法论与工作方式</p>
-          </div>
-        </div>
+<!-- PORTFOLIO -->
+<section class="section" id="works">
+<div class="container">
+<div class="section-number">07</div>
+<div class="head scroll-reveal">
+<div class="head-badge upper">Selected Works</div>
+<h2 class="serif">代表项目</h2>
+<p>精选作品展示设计理念与落地能力</p>
+</div>
+<div class="portfolio-grid">
+<div class="work scroll-reveal">
+<img class="work-img" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="Project 1">
+<div class="work-overlay">
+<div class="work-category">别墅整案</div>
+<div class="work-title">现代东方美学私宅</div>
+<div class="work-desc">800㎡ 独栋别墅 · 杭州</div>
+</div>
+</div>
+<div class="work scroll-reveal">
+<img class="work-img" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Project 2">
+<div class="work-overlay">
+<div class="work-category">样板空间</div>
+<div class="work-title">极简主义样板间</div>
+<div class="work-desc">180㎡ 大平层 · 上海</div>
+</div>
+</div>
+<div class="work scroll-reveal">
+<img class="work-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Project 3">
+<div class="work-overlay">
+<div class="work-category">高端定制</div>
+<div class="work-title">意式轻奢大宅</div>
+<div class="work-desc">500㎡ 复式住宅 · 深圳</div>
+</div>
+</div>
+<div class="work scroll-reveal">
+<img class="work-img" src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80" alt="Project 4">
+<div class="work-overlay">
+<div class="work-category">别墅整案</div>
+<div class="work-title">当代艺术收藏之家</div>
+<div class="work-desc">1200㎡ 独栋别墅 · 北京</div>
+</div>
+</div>
+<div class="work scroll-reveal">
+<img class="work-img" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80" alt="Project 5">
+<div class="work-overlay">
+<div class="work-category">私宅定制</div>
+<div class="work-title">新中式禅意空间</div>
+<div class="work-desc">350㎡ 平层住宅 · 苏州</div>
+</div>
+</div>
+<div class="work scroll-reveal">
+<img class="work-img" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80" alt="Project 6">
+<div class="work-overlay">
+<div class="work-category">样板空间</div>
+<div class="work-title">未来主义科技住宅</div>
+<div class="work-desc">280㎡ 复式公寓 · 广州</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="grid">
-          <div class="card pad span-7 about">
-            <p>我的工作流程通常从“真实生活需求”开始：家庭成员、收纳习惯、动线痛点与预算边界；再通过户型分析建立空间规划（动静分区、通行尺度、收纳容量）；最后把方案落到柜体结构、板材与五金、工艺节点与现场交底上，确保安装后尺寸准确、使用顺手、维护方便。</p>
+<!-- TESTIMONIALS -->
+<section class="section dark">
+<div class="container">
+<div class="section-number">08</div>
+<div class="head scroll-reveal">
+<div class="head-badge upper">Testimonials</div>
+<h2 class="serif">客户评价</h2>
+</div>
+<div class="testimonial-slider scroll-reveal">
+<div class="testimonial">
+<div class="testimonial-text">
+"于老师的设计不是表面的好看,而是真正理解我们家庭的生活方式。
+三年过去了,这个家依然让我们感到舒适和自豪。"
+</div>
+<div class="testimonial-author">张女士</div>
+<div class="testimonial-role">杭州 · 别墅业主</div>
+</div>
+</div>
+</div>
+</section>
 
-            <div class="list" aria-label="服务内容">
-              <div class="item">
-                <div class="icon" aria-hidden="true">✦</div>
-                <div>
-                  <h4>户型规划 / 动线与收纳</h4>
-                  <p>基于家庭结构与生活习惯进行动线优化、收纳分区与容量测算，明确每一处柜体的“放什么、怎么拿”。</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon" aria-hidden="true">▦</div>
-                <div>
-                  <h4>全屋定制柜体系统设计</h4>
-                  <p>衣柜/橱柜/书柜/玄关柜/衣帽间等系统方案，兼顾结构合理、使用顺手、颜值统一与可生产性。</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon" aria-hidden="true">Aa</div>
-                <div>
-                  <h4>材质工艺 / 五金配置 / 交付把控</h4>
-                  <p>板材与环保等级、封边与工艺节点、五金选型与开合方式，配合现场交底与安装验收，降低返工与扯皮。</p>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- AWARDS -->
+<section class="section">
+<div class="container">
+<div class="section-number">09</div>
+<div class="head scroll-reveal">
+<div class="head-badge upper">Recognition</div>
+<h2 class="serif">荣誉与认证</h2>
+</div>
+<div class="awards-grid">
+<div class="award-item scroll-reveal">
+<div class="award-year">2023</div>
+<div class="award-title">年度杰出设计师</div>
+<div class="award-org">中国建筑装饰协会</div>
+</div>
+<div class="award-item scroll-reveal">
+<div class="award-year">2022</div>
+<div class="award-title">金堂奖 · 别墅设计奖</div>
+<div class="award-org">中国室内设计周</div>
+</div>
+<div class="award-item scroll-reveal">
+<div class="award-year">2021</div>
+<div class="award-title">IAI 设计大奖</div>
+<div class="award-org">国际设计联盟</div>
+</div>
+<div class="award-item scroll-reveal">
+<div class="award-year">2020</div>
+<div class="award-title">高级室内建筑师</div>
+<div class="award-org">人力资源和社会保障部</div>
+</div>
+</div>
+</div>
+</section>
 
-          <div class="card pad span-5" id="experience">
-            <div class="section-head" style="margin-top:0">
-              <div>
-                <h3>经历</h3>
-                <p>你可按真实情况替换公司/项目</p>
-              </div>
-            </div>
+<!-- BRAND -->
+<section class="section dark">
+<div class="container scroll-reveal" style="text-align:center">
+<div class="section-number">10</div>
+<h2 class="serif" style="font-size:56px">固诺 <span class="gold">CASA</span></h2>
+<p style="color:#aaa;max-width:800px;margin:30px auto;font-size:17px;line-height:1.8">
+固诺 CASA 是固诺家居旗下高端定制品牌,
+专注别墅整案、产品系统研发与高净值客户定制服务。
+我们相信,真正的设计不是风格的堆砌,而是对生活方式的深度理解与系统化实现。
+</p>
+<a href="http://www.goonuo.com/index.html" target="_blank" 
+   style="color:var(--gold);text-decoration:none;font-size:16px;letter-spacing:1px;display:inline-block;margin-top:20px;border-bottom:2px solid var(--gold);padding-bottom:5px">
+访问官网 →
+</a>
+</div>
+</section>
 
-            <div class="timeline" aria-label="工作经历">
-              <div class="t-item">
-                <header>
-                  <strong>全屋定制高级设计师 · 方案与落地</strong>
-                  <span>2020 — 现在</span>
-                </header>
-                <p>负责户型测量与需求梳理、全屋柜体方案设计与报价、材质/五金配置、节点交底与现场跟进；对接工厂与安装团队，控制尺寸准确性与交付质量。</p>
-              </div>
-              <div class="t-item">
-                <header>
-                  <strong>全屋定制设计师 · 住宅精装改造</strong>
-                  <span>2016 — 2020</span>
-                </header>
-                <p>服务改善型客户与精装房改造项目，完成橱柜/衣柜/玄关/阳台等空间的定制设计；建立方案模板与标准化清单，提升沟通效率与落地稳定性。</p>
-              </div>
-              <div class="t-item">
-                <header>
-                  <strong>定制设计师 · 入行与系统训练</strong>
-                  <span>2012 — 2016</span>
-                </header>
-                <p>从量房、制图到生产安装的全流程学习，掌握基础结构与工艺规则；参与多类型户型项目，积累常见问题的标准解决方案。</p>
-              </div>
-            </div>
-          </div>
+<!-- CONTACT -->
+<section class="section" id="contact">
+<div class="container contact-section">
+<div class="section-number">11</div>
+<div class="head scroll-reveal">
+<div class="head-badge upper">Get in Touch</div>
+<h2 class="serif">开启定制之旅</h2>
+<p>期待与您探讨理想家居的可能性</p>
+</div>
+<div class="contact-box scroll-reveal">
+<div class="qr">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=WeChat-YuTonglan" style="width:100%" alt="WeChat QR">
+</div>
+<div class="contact-info">
+<h3 class="serif">于同兰</h3>
+<p class="gold upper" style="font-size:13px;letter-spacing:2px;margin-bottom:20px">Gunuo CASA · Chief Designer</p>
+<div class="contact-detail">400-850-6678</div>
+<div class="contact-detail">design@goonuo.com</div>
+<div class="contact-detail">杭州 · 上海 · 深圳</div>
+</div>
+</div>
+</div>
+</section>
 
-          <div class="card pad span-6" id="skills">
-            <div class="section-head" style="margin-top:0">
-              <div>
-                <h3>技能</h3>
-                <p>可按你的实际熟练度调整</p>
-              </div>
-            </div>
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<h3 class="serif">于同兰<br><span class="gold">YU TONGLAN</span></h3>
+<p>固诺 CASA 首席设计师<br>高端定制 · 系统设计 · 工艺把控</p>
+<div class="footer-social">
+<a href="#" class="social-link">WX</a>
+<a href="#" class="social-link">WB</a>
+<a href="#" class="social-link">XHS</a>
+</div>
+</div>
+<div class="footer-section">
+<h4>快速链接</h4>
+<ul class="footer-links">
+<li><a href="#about">关于我</a></li>
+<li><a href="#method">设计方法</a></li>
+<li><a href="#works">代表作品</a></li>
+<li><a href="#contact">联系咨询</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>服务范围</h4>
+<ul class="footer-links">
+<li><a href="#">别墅整案</a></li>
+<li><a href="#">样板空间</a></li>
+<li><a href="#">私宅定制</a></li>
+<li><a href="#">设计咨询</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>联系方式</h4>
+<ul class="footer-links">
+<li><a href="tel:400-850-6678">400-850-6678</a></li>
+<li><a href="mailto:design@goonuo.com">design@goonuo.com</a></li>
+<li><a href="http://www.goonuo.com">固诺官网</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 Yu Tonglan · Gunuo CASA. All rights reserved.</p>
+</div>
+</div>
+</footer>
 
-            <div class="skills" aria-label="技能条">
-              <div class="skill">
-                <header><strong>户型规划与收纳体系</strong><span>精通</span></header>
-                <div class="bar" style="--w: 92%"><i></i></div>
-              </div>
-              <div class="skill">
-                <header><strong>柜体结构与工艺节点</strong><span>精通</span></header>
-                <div class="bar" style="--w: 90%"><i></i></div>
-              </div>
-              <div class="skill">
-                <header><strong>材质搭配与五金选型</strong><span>熟练</span></header>
-                <div class="bar" style="--w: 86%"><i></i></div>
-              </div>
-              <div class="skill">
-                <header><strong>现场交底与安装验收</strong><span>熟练</span></header>
-                <div class="bar" style="--w: 84%"><i></i></div>
-              </div>
-            </div>
+<script>
+// Custom Cursor (仅在桌面端启用)
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
 
-            <div class="list" style="margin-top:14px" aria-label="工具">
-              <div class="item">
-                <div class="icon" aria-hidden="true">Ps</div>
-                <div>
-                  <h4>工具与软件</h4>
-                  <p>AutoCAD / SketchUp / 3ds Max（或酷家乐）/ Excel（报价清单）/ PS（效果图与方案呈现）。</p>
-                </div>
-              </div>
-            </div>
-          </div>
+if (window.innerWidth > 768) {
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    cursor.style.opacity = '1';
+    
+    cursorFollower.style.left = e.clientX + 'px';
+    cursorFollower.style.top = e.clientY + 'px';
+    cursorFollower.style.opacity = '1';
+  });
 
-          <div class="card pad span-6">
-            <div class="section-head" style="margin-top:0">
-              <div>
-                <h3>服务方式</h3>
-                <p>适合接单与长期合作展示</p>
-              </div>
-            </div>
-
-            <div class="list" aria-label="服务方式列表">
-              <div class="item">
-                <div class="icon" aria-hidden="true">①</div>
-                <div>
-                  <h4>量房与需求沟通</h4>
-                  <p>确认家庭成员与生活习惯、收纳清单、风格偏好与预算边界；现场复尺并记录管线/梁柱/窗台等关键约束。</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon" aria-hidden="true">②</div>
-                <div>
-                  <h4>方案设计与报价</h4>
-                  <p>输出平面规划与柜体布局、立面与细部结构、材质与五金配置建议，并以清单化报价确保可比价、可控成本。</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon" aria-hidden="true">③</div>
-                <div>
-                  <h4>下单、交底与验收</h4>
-                  <p>确认尺寸与生产图纸，安排现场交底与安装跟进；按节点验收（对缝/封边/开合/抽拉/收口），确保交付质量与使用体验。</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="portfolio">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h3>个人作品集</h3>
-            <p>图片源自 Unsplash；如遇加载失败，系统会自动显示文本占位图</p>
-          </div>
-        </div>
-
-        <div class="portfolio" aria-label="作品网格">
-          <article class="work" data-title="三房两厅全屋定制 / 动线与收纳规划" data-desc="基于家庭成员与生活习惯重构动线：玄关收纳、餐边与厨房联动、客厅展示与储物、卧室衣物分区；在预算内完成柜体系统化规划与落地。" data-tags="全屋定制,收纳,动线" data-img="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" data-style="功能优先 / 细节克制 / 统一比例" data-category="改善型住宅：全屋柜体系统方案" data-concept="把“常用—偶用—囤货”分层管理：高频触手可及，低频集中收纳；用统一柜门比例与留白控制整体观感。" data-inspiration="居住动线分析 + 收纳分区方法" data-role="方案设计与落地：量房、布局、结构、材质与五金、交底验收" data-deliverables="平面与立面、柜体结构图、报价清单、材质与五金清单、安装验收要点">
-            <div class="thumb" aria-hidden="true"><img alt="全屋定制案例" loading="lazy" src="https://picsum.photos/400/300?random=1" /></div>
-            <div class="body">
-              <strong>三房两厅全屋定制 / 动线与收纳规划</strong>
-              <span>结构化收纳 + 可落地柜体系统</span>
-              <div class="tags"><span class="tag">全屋</span><span class="tag">收纳</span><span class="tag">动线</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="小户型厨房 + 餐边柜联动 / 高效收纳" data-desc="在有限面积内提升厨房操作效率：动线分区（洗/切/炒/收）、高低台与电器位规划、餐边柜与冰箱位联动；兼顾台面整洁与囤货容量。" data-tags="橱柜,餐边柜,收纳" data-img="https://images.unsplash.com/photo-1556911220-e67041e96259?w=800&q=80" data-style="操作顺手 / 分区明确 / 易清洁" data-category="小户型：橱柜系统与餐边联动" data-concept="把“频次”写进设计：常用区减少弯腰与走动，电器位预留散热与插座；用抽拉与分隔件提升收纳效率。" data-inspiration="厨房工作三角 + 收纳人体工学" data-role="橱柜方案：布局、结构、台面与五金、安装交底" data-deliverables="平面/立面、台面与电器位、五金清单、收口与防水节点说明">
-            <div class="thumb" aria-hidden="true"><img alt="厨房橱柜案例" loading="lazy" src="https://picsum.photos/400/300?random=2" /></div>
-            <div class="body">
-              <strong>小户型厨房 + 餐边柜联动 / 高效收纳</strong>
-              <span>操作动线优化 + 囤货容量提升</span>
-              <div class="tags"><span class="tag">橱柜</span><span class="tag">餐边</span><span class="tag">收纳</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="衣帽间系统 / 分区与五金配置" data-desc="围绕衣物类型与使用频次做分区：长短挂、叠放、抽屉、首饰/包包、行李区；配置抽拉篮、裤架、灯带与感应开关，兼顾容量与体验。" data-tags="衣帽间,五金,分区" data-img="https://images.unsplash.com/photo-1558997559-8692750a9f5c?w=800&q=80" data-style="分区清晰 / 细节到位 / 维护友好" data-category="卧室空间：衣帽间系统设计" data-concept="先用清单确定“需要多少格”，再确定“怎么拿更顺手”：抽屉放高频，小件用分隔，挂放保形，留出换季与行李区。" data-inspiration="衣物收纳清单法 + 人体工学高度" data-role="结构与五金：分区、灯光、开合方式、安装验收" data-deliverables="分区方案、五金清单、灯带与电位建议、安装验收检查表">
-            <div class="thumb" aria-hidden="true"><img alt="衣帽间案例" loading="lazy" src="https://picsum.photos/400/300?random=3" /></div>
-            <div class="body">
-              <strong>衣帽间系统 / 分区与五金配置</strong>
-              <span>清单化收纳 + 五金到位</span>
-              <div class="tags"><span class="tag">衣帽间</span><span class="tag">五金</span><span class="tag">体验</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="玄关柜 + 餐边柜一体化 / 进门收纳" data-desc="解决进门杂物、鞋帽与钥匙动线：换鞋凳、开放格、雨具区、鞋柜分区与除味通风；餐边柜补充小家电与高频餐具收纳，实现“进门即收纳”。" data-tags="玄关柜,餐边柜,收纳" data-img="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80" data-style="动线顺畅 / 分区清晰 / 易维护" data-category="公共区域：玄关与餐边联动" data-concept="以“回家顺手”为准则：外出物品有固定落点，鞋帽按季节分层，常用餐具与小家电集中一侧，减少来回走动。" data-inspiration="回家动线 + 高低频收纳法" data-role="方案设计：柜体分区、结构细节、五金配置、交底验收" data-deliverables="平面/立面、分区清单、五金与电位建议、安装验收要点">
-            <div class="thumb" aria-hidden="true"><img alt="玄关餐边柜案例" loading="lazy" src="https://picsum.photos/400/300?random=4" /></div>
-            <div class="body">
-              <strong>玄关柜 + 餐边柜一体化 / 进门收纳</strong>
-              <span>进门动线更顺手</span>
-              <div class="tags"><span class="tag">玄关</span><span class="tag">餐边</span><span class="tag">收纳</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="儿童房定制 / 学习区与成长收纳" data-desc="围绕学习、展示与成长需求：书桌尺度、书柜分区、玩具与绘本收纳、衣物换季区；预留可调整层板与可扩展模块，兼顾安全与耐用。" data-tags="儿童房,书柜,收纳" data-img="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" data-style="安全圆角 / 低维护 / 可成长" data-category="卧室空间：儿童房系统定制" data-concept="把“成长变化”写进柜体：可调层板适配不同阶段收纳，桌面与照明考虑长时间学习，常用物品触手可及。" data-inspiration="儿童人体工学 + 分区收纳" data-role="方案与落地：布局、结构、环保材料建议、交底验收" data-deliverables="分区方案、结构图、材料与五金清单、使用与维护建议">
-            <div class="thumb" aria-hidden="true"><img alt="儿童房定制案例" loading="lazy" src="https://picsum.photos/400/300?random=5" /></div>
-            <div class="body">
-              <strong>儿童房定制 / 学习区与成长收纳</strong>
-              <span>可成长的分区体系</span>
-              <div class="tags"><span class="tag">儿童房</span><span class="tag">书柜</span><span class="tag">收纳</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="电视墙收纳柜 / 隐藏式设备与展示" data-desc="兼顾展示与收纳：电视墙、储物柜、路由器与设备隐藏、线管预留、扫地机器人与电位规划；确保日常使用整洁、维护方便、开合顺畅。" data-tags="客厅,电视墙,收纳" data-img="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" data-style="整洁克制 / 设备隐藏 / 好维护" data-category="客厅空间：电视墙与储物系统" data-concept="把“线”和“设备”提前规划：预留散热与检修空间，电位与穿线口一次到位；开放展示与封闭收纳比例可按生活习惯调整。" data-inspiration="设备隐藏设计 + 展示/收纳比例法" data-role="方案设计：结构与电位、五金、安装验收" data-deliverables="柜体结构与电位图、五金建议、检修与散热说明、验收清单">
-            <div class="thumb" aria-hidden="true"><img alt="电视墙收纳柜" loading="lazy" src="https://picsum.photos/400/300?random=6" /></div>
-            <div class="body">
-              <strong>电视墙收纳柜 / 隐藏式设备与展示</strong>
-              <span>设备与走线更整洁</span>
-              <div class="tags"><span class="tag">客厅</span><span class="tag">电视墙</span><span class="tag">收纳</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="阳台柜 + 家政收纳 / 清洁动线" data-desc="整合洗烘、清洁与囤货：洗衣机/烘干机堆叠或并排、台盆与清洁区、拖把扫把隐藏、消毒/熨烫收纳；提升家务效率并保持视觉整洁。" data-tags="阳台柜,家政,收纳" data-img="https://images.unsplash.com/photo-1621905274607-969f9cac8e92?w=800&q=80" data-style="家务友好 / 易清洁 / 隐藏收纳" data-category="生活阳台：家政系统柜" data-concept="把家务流程串起来：洗—晾—叠—收；清洁工具有固定位置，湿区耐水材质与通风优先，避免后期发霉。" data-inspiration="家务动线 + 湿区材料选择" data-role="方案与落地：布局、耐水材料建议、五金、电位" data-deliverables="阳台柜方案、耐水与通风建议、电位清单、验收要点">
-            <div class="thumb" aria-hidden="true"><img alt="阳台家政收纳" loading="lazy" src="https://picsum.photos/400/300?random=7" /></div>
-            <div class="body">
-              <strong>阳台柜 + 家政收纳 / 清洁动线</strong>
-              <span>家务流程更高效</span>
-              <div class="tags"><span class="tag">阳台</span><span class="tag">家政</span><span class="tag">收纳</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="全屋柜体风格统一 / 门型与拉手策略" data-desc="用统一规则控制全屋观感：柜门分割比例、门型（平板/造型）、拉手（无拉手/明拉手）、踢脚与收口；兼顾颜值与耐用清洁，减少“拼凑感”。" data-tags="门型,拉手,统一" data-img="https://images.unsplash.com/photo-1615873968403-89e0618529a8?w=800&q=80" data-style="统一比例 / 细节克制 / 易清洁" data-category="全屋定制：风格与细节统一" data-concept="先定“规则”再谈“好看”：全屋保持同一套门型与比例，局部用材质与灯光做重点，整体更高级耐看。" data-inspiration="系统化设计思维 + 细节统一" data-role="方案把控：门型比例、五金与收口细节、落地验收" data-deliverables="门型与拉手方案、收口节点建议、材质清单、验收要点">
-            <div class="thumb" aria-hidden="true"><img alt="柜体风格与门型" loading="lazy" src="https://picsum.photos/400/300?random=8" /></div>
-            <div class="body">
-              <strong>全屋柜体风格统一 / 门型与拉手策略</strong>
-              <span>统一规则，观感更高级</span>
-              <div class="tags"><span class="tag">门型</span><span class="tag">细节</span><span class="tag">统一</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="入户到卧室收纳清单 / 容量测算" data-desc="把家庭物品清单化并做容量测算：衣物、被褥、行李、杂物、清洁、儿童用品等；用“格子数量”而不是“感觉”指导柜体尺寸分配，降低后期爆仓。" data-tags="清单,容量,收纳" data-img="https://images.unsplash.com/photo-1594235282218-e3223ecb8e88?w=800&q=80" data-style="理性规划 / 预算可控 / 可验证" data-category="全屋定制：收纳容量规划" data-concept="先列清单再分配：每类物品确定数量与收纳方式（挂/叠/抽/开放），再按频次决定位置，方案更稳定也更好沟通。" data-inspiration="收纳清单法 + 频次分层" data-role="规划与沟通：清单、容量测算、柜体分区与结构建议" data-deliverables="收纳清单、容量测算表、分区建议、预算与优先级建议">
-            <div class="thumb" aria-hidden="true"><img alt="收纳清单与容量规划" loading="lazy" src="https://picsum.photos/400/300?random=9" /></div>
-            <div class="body">
-              <strong>入户到卧室收纳清单 / 容量测算</strong>
-              <span>用数据让方案更可控</span>
-              <div class="tags"><span class="tag">清单</span><span class="tag">容量</span><span class="tag">规划</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="卧室衣柜系统 / 挂区比例与抽屉布局" data-desc="根据衣物类型确定挂区比例（长挂/短挂/叠放），抽屉与隔板高度按实际衣物尺寸配置；结合灯带、首饰收纳与换季区，让衣柜更好用也更耐用。" data-tags="衣柜,分区,五金" data-img="https://images.unsplash.com/photo-1595515106962-0901e95265cd?w=800&q=80" data-style="结构合理 / 细节到位 / 易维护" data-category="卧室空间：衣柜系统设计" data-concept="用衣物清单确定比例：挂区解决易皱衣物，抽屉收纳小件，叠放区留给毛衣与家居服；预留换季与行李区避免后期爆仓。" data-inspiration="衣物清单法 + 人体工学高度" data-role="方案与落地：结构分区、五金建议、安装验收" data-deliverables="衣柜结构图、分区清单、五金清单、验收要点">
-            <div class="thumb" aria-hidden="true"><img alt="卧室衣柜系统" loading="lazy" src="https://picsum.photos/400/300?random=10" /></div>
-            <div class="body">
-              <strong>卧室衣柜系统 / 挂区比例与抽屉布局</strong>
-              <span>分区合理，更顺手</span>
-              <div class="tags"><span class="tag">衣柜</span><span class="tag">分区</span><span class="tag">五金</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="板材与封边工艺 / 预算内的耐用选择" data-desc="在预算内选择更耐用、更安心的组合：环保等级、板材类型、封边方式与胶水、耐水与耐刮考虑；把风险点前置到选材阶段，减少后期异味与开胶。" data-tags="板材,封边,工艺" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?w=800&q=80" data-style="参数清晰 / 可落地 / 可验收" data-category="全屋定制：材料与工艺把控" data-concept="不只看单价：湿区优先耐水与封边，儿童房优先环保与易清洁；把“可验收指标”写进沟通，减少扯皮。" data-inspiration="材料参数对比 + 现场验收要点" data-role="材料建议：选材对比、工艺节点、验收标准" data-deliverables="材料对比表、工艺节点清单、验收要点与风险提示">
-            <div class="thumb" aria-hidden="true"><img alt="板材与工艺" loading="lazy" src="https://picsum.photos/400/300?random=11" /></div>
-            <div class="body">
-              <strong>板材与封边工艺 / 预算内的耐用选择</strong>
-              <span>参数清晰，少踩坑</span>
-              <div class="tags"><span class="tag">板材</span><span class="tag">封边</span><span class="tag">工艺</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="主卧衣柜 + 梳妆台一体 / 细部收口" data-desc="在卧室空间内整合衣柜与梳妆：抽屉高低分配、台面与镜位、电位与灯光预留、门板分割与收口处理；兼顾使用便利与整体观感。" data-tags="主卧,衣柜,收口" data-img="https://images.unsplash.com/photo-1616594079960-fae29631778c?w=800&q=80" data-style="一体化 / 细节克制 / 维护友好" data-category="卧室空间：衣柜系统与梳妆联动" data-concept="把“早晚高频动作”纳入设计：取衣—换装—梳妆形成顺手动线；抽屉收纳小件，台面预留充电与灯光，细部收口提前定方案。" data-inspiration="卧室高频动线 + 细部收口节点" data-role="方案与落地：结构分区、电位灯光、五金与收口、验收" data-deliverables="平面/立面、分区清单、电位与灯光建议、收口节点、验收要点">
-            <div class="thumb" aria-hidden="true"><img alt="主卧衣柜梳妆一体" loading="lazy" src="https://picsum.photos/400/300?random=12" /></div>
-            <div class="body">
-              <strong>主卧衣柜 + 梳妆台一体 / 细部收口</strong>
-              <span>一体化规划，细节更稳</span>
-              <div class="tags"><span class="tag">主卧</span><span class="tag">衣柜</span><span class="tag">收口</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="定制落地交付清单 / 节点验收" data-desc="把设计落地拆成可验收节点：复尺、下单图纸、进场保护、安装过程检查、收口与五金调试、完工验收；用清单减少返工与扯皮。" data-tags="交付,验收,清单" data-img="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" data-style="标准化 / 可追踪 / 风险前置" data-category="全屋定制：交付与质量管理" data-concept="把“不可控”变成“可检查”：每个节点都有检查项与拍照留档；问题在安装当下解决，避免完工后返工成本飙升。" data-inspiration="项目管理思维 + 现场验收要点" data-role="交付管理：节点拆分、验收要点、问题闭环" data-deliverables="节点清单、验收表、问题整改闭环记录（模板）">
-            <div class="thumb" aria-hidden="true"><img alt="交付与验收清单" loading="lazy" src="https://picsum.photos/400/300?random=13" /></div>
-            <div class="body">
-              <strong>定制落地交付清单 / 节点验收</strong>
-              <span>可追踪的交付流程</span>
-              <div class="tags"><span class="tag">交付</span><span class="tag">验收</span><span class="tag">清单</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="预算拆解与报价清单 / 可比价" data-desc="把全屋定制报价拆成可比价清单：柜体投影/展开、门板与台面、五金、功能配件、收口与安装；明确增项规则，避免后期不断加价。" data-tags="预算,报价,清单" data-img="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" data-style="清单化 / 透明可比 / 预算可控" data-category="全屋定制：预算与报价体系" data-concept="用清单替代口头承诺：同口径才能比价；先定必需项，再做可选升级项，预算更可控，决策也更快。" data-inspiration="成本拆解 + 项目清单管理" data-role="报价与把控：清单口径、增项规则、预算优先级" data-deliverables="报价清单模板、增项规则说明、预算优先级建议">
-            <div class="thumb" aria-hidden="true"><img alt="预算与报价清单" loading="lazy" src="https://picsum.photos/400/300?random=14" /></div>
-            <div class="body">
-              <strong>预算拆解与报价清单 / 可比价</strong>
-              <span>预算透明，更好决策</span>
-              <div class="tags"><span class="tag">预算</span><span class="tag">报价</span><span class="tag">清单</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="全屋风格定调 / 颜色与材质搭配" data-desc="从整体风格出发建立材料与色彩规则：柜门颜色、木纹/石纹选择、金属点缀、墙地顶与软装的协调；避免“每个空间都好看但放一起不统一”。" data-tags="风格,材质,色彩" data-img="https://images.unsplash.com/photo-1502005229766-3c6227c4679b?w=800&q=80" data-style="统一调性 / 低饱和 / 重点突出" data-category="全屋定制：风格与材质策略" data-concept="先定大面（墙地顶与柜体），再定点缀（金属/灯光/局部木色）；用统一规则控制变化，整体更耐看也更容易落地。" data-inspiration="材质板（Material Board）+ 统一规则" data-role="风格把控：材料建议、样板确认、落地一致性" data-deliverables="材料与色彩方案、样板确认清单、落地注意事项">
-            <div class="thumb" aria-hidden="true"><img alt="全屋风格与材质搭配" loading="lazy" src="https://picsum.photos/400/300?random=15" /></div>
-            <div class="body">
-              <strong>全屋风格定调 / 颜色与材质搭配</strong>
-              <span>统一规则，整体更高级</span>
-              <div class="tags"><span class="tag">风格</span><span class="tag">材质</span><span class="tag">色彩</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="现场复尺与问题预判 / 避坑" data-desc="复尺不仅是量尺寸：重点核对墙体垂直、地面水平、门洞与踢脚线、管线位置、窗台高度等；提前发现问题并给出调整方案，减少安装翻车。" data-tags="复尺,避坑,现场" data-img="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80" data-style="风险前置 / 细节严谨 / 可交付" data-category="全屋定制：复尺与风险控制" data-concept="把“不可见的偏差”显性化：记录偏差并确定处理方式（找平/收口/补板/调整柜体）；在生产前解决，成本最低。" data-inspiration="现场管理 + 安装常见问题库" data-role="现场把控：复尺记录、问题预判、节点方案" data-deliverables="复尺记录表、风险点清单、节点处理方案">
-            <div class="thumb" aria-hidden="true"><img alt="现场复尺与避坑" loading="lazy" src="https://picsum.photos/400/300?random=16" /></div>
-            <div class="body">
-              <strong>现场复尺与问题预判 / 避坑</strong>
-              <span>风险前置，落地更稳</span>
-              <div class="tags"><span class="tag">复尺</span><span class="tag">避坑</span><span class="tag">现场</span></div>
-            </div>
-          </article>
-
-          <article class="work" data-title="小空间榻榻米 + 书柜 / 多功能" data-desc="在次卧或书房实现多功能：榻榻米收纳、书柜展示与封闭结合、可变书桌；预留通风与检修，兼顾容量、舒适与后期维护。" data-tags="榻榻米,书房,多功能" data-img="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" data-style="多功能 / 收纳最大化 / 好维护" data-category="次卧/书房：多功能定制" data-concept="先定使用优先级：睡眠/办公/收纳；用模块化结构提高复用性，开放与封闭比例按使用频次设置，避免积灰与凌乱。" data-inspiration="小空间收纳策略 + 模块化设计" data-role="方案与落地：布局、结构、五金、电位与验收" data-deliverables="平面/立面、结构图、电位建议、验收要点">
-            <div class="thumb" aria-hidden="true"><img alt="榻榻米与书柜定制" loading="lazy" src="https://picsum.photos/400/300?random=17" /></div>
-            <div class="body">
-              <strong>小空间榻榻米 + 书柜 / 多功能</strong>
-              <span>收纳与使用一起满足</span>
-              <div class="tags"><span class="tag">榻榻米</span><span class="tag">书房</span><span class="tag">多功能</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="posts">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h3>随笔 / 全屋定制观点</h3>
-            <p>记录户型规划、收纳与材料工艺的实战经验</p>
-          </div>
-        </div>
-
-        <div class="posts" aria-label="文章列表">
-          <article class="post">
-            <div class="head"><span class="pill">方法论</span><span class="pill">收纳</span></div>
-            <div class="body">
-              <strong>户型先行：动线与收纳如何一起做对</strong>
-              <p>先明确家庭成员与生活习惯，再做动线与收纳分区；把“常用/偶用/囤货”分层，空间会更顺手。</p>
-              <a href="#contact">想合作？留言交流 →</a>
-            </div>
-          </article>
-          <article class="post">
-            <div class="head"><span class="pill">材料</span><span class="pill">落地</span></div>
-            <div class="body">
-              <strong>板材与环保等级怎么选：把“参数”翻译成可落地的选择</strong>
-              <p>关注环保等级、封边工艺与使用场景，别只看单价；把预算花在“看不见但决定耐用”的地方。</p>
-              <a href="#contact">获取打样清单 →</a>
-            </div>
-          </article>
-          <article class="post">
-            <div class="head"><span class="pill">职业</span><span class="pill">沟通</span></div>
-            <div class="body">
-              <strong>五金别踩坑：抽屉、铰链、拉手怎么选更省心</strong>
-              <p>按使用频次选承重与阻尼，预留安装与维修空间；一次选对，后期少异响、少下垂、少返工。</p>
-              <a href="#contact">一起把项目做顺 →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h3>联系与合作</h3>
-            <p>此表单仅用于展示；你可以接入邮箱/表单服务</p>
-          </div>
-        </div>
-
-        <div class="contact">
-          <div class="card pad">
-            <form id="contactForm">
-              <div class="field">
-                <label for="cname">你的称呼</label>
-                <input id="cname" name="cname" placeholder="例如：张先生 / 李女士" autocomplete="name" />
-              </div>
-              <div class="field">
-                <label for="cemail">联系方式（邮箱/微信）</label>
-                <input id="cemail" name="cemail" placeholder="例如：name@email.com / wechat_id" autocomplete="email" />
-              </div>
-              <div class="field">
-                <label for="cmsg">项目简述</label>
-                <textarea id="cmsg" name="cmsg" placeholder="户型/面积/需求点/风格偏好/时间节点/预算范围（可选）"></textarea>
-              </div>
-              <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between;">
-                <button class="btn primary" type="submit">发送（演示）</button>
-                <span style="color: var(--muted); font-size: 12px;">或直接邮件：<span id="email2">hello@yourdomain.com</span></span>
-              </div>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="footer">
-      <div class="container">
-        <div class="footer-inner">
-          <span>© <span id="year"></span> <span id="name2">于同兰</span> · 全屋定制高级设计师</span>
-          <span>本页为可编辑模板：你可自由修改内容与图片</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <dialog id="workModal" aria-label="作品详情弹窗">
-    <div class="modal-head">
-      <strong id="modalTitle">作品标题</strong>
-      <button class="xbtn" id="closeModal" type="button" aria-label="关闭">关闭</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-grid">
-        <div class="mock" aria-hidden="true">
-          <div class="mock-top"></div>
-        </div>
-        <div>
-          <p id="modalDesc">作品描述</p>
-          <div class="tags" id="modalTags" style="margin-top:12px"></div>
-          <div class="meta" aria-label="作品信息">
-            <div class="meta-row"><div class="k">风格</div><div class="v" id="modalStyle">—</div></div>
-            <div class="meta-row"><div class="k">品类/产品</div><div class="v" id="modalCategory">—</div></div>
-            <div class="meta-row"><div class="k">构思</div><div class="v" id="modalConcept">—</div></div>
-            <div class="meta-row"><div class="k">灵感</div><div class="v" id="modalInspiration">—</div></div>
-            <div class="meta-row"><div class="k">我的职责</div><div class="v" id="modalRole">—</div></div>
-            <div class="meta-row"><div class="k">交付物</div><div class="v" id="modalDeliverables">—</div></div>
-          </div>
-          <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
-            <button class="btn primary" id="copyTitle" type="button">复制标题</button>
-            <button class="btn" id="printWork" type="button">打印此页</button>
-          </div>
-          <p style="margin-top:14px; color: var(--faint); font-size: 12px;">提示：把这里换成你真实项目：项目背景、你的职责、设计策略、关键视觉规则、落地物料与结果。</p>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <script>
-    const $ = (sel, root=document) => root.querySelector(sel);
-    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
-
-    const email = $('#email')?.textContent?.trim() || 'hello@yourdomain.com';
-    $('#email2').textContent = email;
-    $('#year').textContent = new Date().getFullYear();
-    $('#name2').textContent = $('#name').textContent;
-
-    function toast(text){
-      let t = $('#toast');
-      if(!t){
-        t = document.createElement('div');
-        t.id = 'toast';
-        t.style.cssText = [
-          'position:fixed',
-          'left:50%',
-          'bottom:22px',
-          'transform:translateX(-50%)',
-          'padding:10px 14px',
-          'border-radius:999px',
-          'border:1px solid var(--stroke)',
-          'background: color-mix(in srgb, var(--card2) 75%, transparent)',
-          'backdrop-filter: blur(12px)',
-          'box-shadow: var(--shadow2)',
-          'color: var(--text)',
-          'font-size: 13px',
-          'z-index:999',
-          'opacity:0',
-          'transition: opacity .22s var(--ease), transform .22s var(--ease)'
-        ].join(';');
-        document.body.appendChild(t);
-      }
-      t.textContent = text;
-      t.style.opacity = '1';
-      t.style.transform = 'translateX(-50%) translateY(-4px)';
-      clearTimeout(window.__toastTimer);
-      window.__toastTimer = setTimeout(()=>{
-        t.style.opacity = '0';
-        t.style.transform = 'translateX(-50%) translateY(0px)';
-      }, 1600);
-    }
-
-    async function copy(text){
-      try{
-        await navigator.clipboard.writeText(text);
-        toast('已复制：' + text);
-      }catch{
-        toast('复制失败，请手动复制');
-      }
-    }
-
-    $('#copyEmailBtn').addEventListener('click', ()=> copy($('#email').textContent.trim()));
-
-    document.addEventListener('keydown', (e)=>{
-      const isMac = navigator.platform.toLowerCase().includes('mac');
-      const mod = isMac ? e.metaKey : e.ctrlKey;
-      if(mod && e.key.toLowerCase() === 'k'){
-        e.preventDefault();
-        location.hash = '#contact';
-        toast('已跳转到联系');
-      }
+  // Hover effects for cursor
+  document.querySelectorAll('a, button, .work, .method-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'scale(1.5)';
+      cursorFollower.style.transform = 'scale(1.5)';
     });
-
-    $('#downloadBtn').addEventListener('click', ()=> window.print());
-
-    const modal = $('#workModal');
-    const modalTitle = $('#modalTitle');
-    const modalDesc = $('#modalDesc');
-    const modalTags = $('#modalTags');
-    const modalStyle = $('#modalStyle');
-    const modalCategory = $('#modalCategory');
-    const modalConcept = $('#modalConcept');
-    const modalInspiration = $('#modalInspiration');
-    const modalRole = $('#modalRole');
-    const modalDeliverables = $('#modalDeliverables');
-
-    function openWork(el){
-      modalTitle.textContent = el.dataset.title || '作品';
-      modalDesc.textContent = el.dataset.desc || '';
-      const img = el.getAttribute('data-img') || '';
-      const mockTop = document.querySelector('.mock .mock-top');
-      if(mockTop){
-        // 自动降级处理：如果 Unsplash 图片在弹窗中也加载失败，这里也可以做检测
-        // 但简单起见，我们假设小图能加载，大图就能加载
-        // 如果 img 包含 unsplash，则直接使用
-        if(img){
-           mockTop.style.backgroundImage = `url("${img}")`;
-           mockTop.style.backgroundSize = 'cover';
-           mockTop.style.backgroundPosition = 'center';
-        }else{
-           mockTop.style.backgroundImage = '';
-        }
-      }
-
-      if(modalStyle) modalStyle.textContent = el.dataset.style || '—';
-      if(modalCategory) modalCategory.textContent = el.dataset.category || '—';
-      if(modalConcept) modalConcept.textContent = el.dataset.concept || '—';
-      if(modalInspiration) modalInspiration.textContent = el.dataset.inspiration || '—';
-      if(modalRole) modalRole.textContent = el.dataset.role || '—';
-      if(modalDeliverables) modalDeliverables.textContent = el.dataset.deliverables || '—';
-
-      modalTags.innerHTML = '';
-      const tags = (el.dataset.tags || '').split(',').map(s=>s.trim()).filter(Boolean);
-      for(const t of tags){
-        const span = document.createElement('span');
-        span.className = 'tag';
-        span.textContent = t;
-        modalTags.appendChild(span);
-      }
-      modal.showModal();
-    }
-
-    $$('.work').forEach(w => w.addEventListener('click', ()=> openWork(w)));
-    $('#closeModal').addEventListener('click', ()=> modal.close());
-    modal.addEventListener('click', (e)=>{
-      const rect = modal.getBoundingClientRect();
-      const inDialog = (rect.top <= e.clientY && e.clientY <= rect.bottom && rect.left <= e.clientX && e.clientX <= rect.right);
-      if(!inDialog) modal.close();
+    
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'scale(1)';
+      cursorFollower.style.transform = 'scale(1)';
     });
+  });
+}
 
-    $('#copyTitle').addEventListener('click', ()=> copy(modalTitle.textContent));
-    $('#printWork').addEventListener('click', ()=> window.print());
+// Navbar scroll
+let lastScroll = 0;
+const nav = document.querySelector('.nav');
 
-    $('#contactForm').addEventListener('submit', (e)=>{
-      e.preventDefault();
-      toast('已记录（演示）。你可接入真实表单服务。');
-      e.target.reset();
-    });
+window.addEventListener('scroll', () => {
+const currentScroll = window.pageYOffset;
+  
+if (currentScroll > lastScroll && currentScroll > 100) {
+nav.classList.add('hidden');
+} else {
+nav.classList.remove('hidden');
+}
+  
+lastScroll = currentScroll;
+});
 
-    // -----------------------------------------------------------
-    // 新增：自动修复裂图脚本
-    // 如果 Unsplash 图片加载失败，自动替换为文字占位图
-    // -----------------------------------------------------------
-    document.querySelectorAll('img').forEach(img => {
-      img.onerror = function() {
-        // 防止无限循环
-        this.onerror = null;
-        // 获取图片的 alt 文本作为占位符文字
-        const text = this.getAttribute('alt') || '图片加载失败';
-        // 使用 placehold.co 生成带文字的图片
-        this.src = `https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(text)}`;
-        // 保持卡片美观
-        this.style.objectFit = 'cover';
-      };
-    });
+// Scroll reveal animations
+const revealElements = document.querySelectorAll('.scroll-reveal');
 
-    const anchors = $$('.nav a');
-    const sections = anchors.map(a => $(a.getAttribute('href'))).filter(Boolean);
-    const obs = new IntersectionObserver((entries)=>{
-      for(const en of entries){
-        if(en.isIntersecting){
-          const id = '#' + en.target.id;
-          anchors.forEach(a => a.style.color = a.getAttribute('href') === id ? 'var(--text)' : '');
-        }
-      }
-    }, {rootMargin: '-40% 0px -55% 0px', threshold: 0.01});
-    sections.forEach(s => obs.observe(s));
-  </script>
+const revealOnScroll = () => {
+const windowHeight = window.innerHeight;
+  
+revealElements.forEach(el => {
+const elementTop = el.getBoundingClientRect().top;
+    
+if (elementTop < windowHeight - 100) {
+el.classList.add('active');
+}
+});
+};
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+// Smooth scroll for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+    
+if (target) {
+window.scrollTo({
+top: target.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+
+// Parallax effect for hero decoration
+window.addEventListener('scroll', () => {
+const scrolled = window.pageYOffset;
+const decoration = document.querySelector('.hero-decoration');
+  
+if (decoration) {
+decoration.style.transform = `rotate(${scrolled * 0.1}deg)`;
+}
+});
+
+// Numbers counter animation
+const animateCounter = (element, target, duration = 2000) => {
+let start = 0;
+const increment = target / (duration / 16);
+  
+const timer = setInterval(() => {
+start += increment;
+if (start >= target) {
+element.textContent = target + (element.textContent.includes('+') ? '+' : '') + 
+(element.textContent.includes('%') ? '%' : '');
+clearInterval(timer);
+} else {
+element.textContent = Math.floor(start) + (element.textContent.includes('+') ? '+' : '') +
+(element.textContent.includes('%') ? '%' : '');
+}
+}, 16);
+};
+
+// Trigger counter animation when stats section is in view
+const statsObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const numbers = entry.target.querySelectorAll('.stat-number');
+numbers.forEach(num => {
+const text = num.textContent;
+const value = parseInt(text);
+num.textContent = '0' + text.replace(/[0-9]/g, '');
+animateCounter(num, value);
+});
+statsObserver.unobserve(entry.target);
+}
+});
+}, { threshold: 0.5 });
+
+const heroStats = document.querySelector('.hero-stats');
+if (heroStats) {
+statsObserver.observe(heroStats);
+}
+
+// Loading animation
+window.addEventListener('load', () => {
+document.body.style.opacity = '0';
+setTimeout(() => {
+document.body.style.transition = 'opacity 0.5s ease';
+document.body.style.opacity = '1';
+}, 100);
+});
+
+// 移动端菜单切换
+function toggleMobileMenu() {
+const mobileMenu = document.getElementById('mobileMenu');
+const menuBtn = document.querySelector('.mobile-menu-btn');
+mobileMenu.classList.toggle('active');
+menuBtn.classList.toggle('active');
+document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+}
+
+// 点击菜单外部关闭
+document.getElementById('mobileMenu')?.addEventListener('click', function(e) {
+if (e.target === this) {
+toggleMobileMenu();
+}
+});
+</script>
+
 </body>
 </html>
