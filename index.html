@@ -1,0 +1,960 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>个人简历 / 作品集 | 全屋定制高级设计师</title>
+  <meta name="description" content="于同兰｜全屋定制高级设计师个人简历与作品集：专注户型规划、收纳系统、柜体落地与交付，提供从量房到安装验收的全流程设计服务。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#070A12;
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --faint: rgba(255,255,255,.48);
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.09);
+      --stroke: rgba(255,255,255,.12);
+      --brand:#8B5CF6;
+      --accent:#F472B6;
+      --good:#22C55E;
+      --shadow: 0 24px 64px rgba(0,0,0,.45);
+      --shadow2: 0 18px 48px rgba(0,0,0,.28);
+      --r-xl: 24px;
+      --r-lg: 18px;
+      --r-md: 14px;
+      --max: 1120px;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#F6F7FB;
+        --text: rgba(17,24,39,.92);
+        --muted: rgba(17,24,39,.72);
+        --faint: rgba(17,24,39,.56);
+        --card: rgba(255,255,255,.70);
+        --card2: rgba(255,255,255,.88);
+        --stroke: rgba(17,24,39,.10);
+        --shadow: 0 24px 64px rgba(17,24,39,.14);
+        --shadow2: 0 18px 48px rgba(17,24,39,.10);
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, "Noto Sans SC", system-ui, -apple-system, Segoe UI, Roboto, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(139,92,246,.30), transparent 55%),
+        radial-gradient(1000px 520px at 90% 18%, rgba(244,114,182,.22), transparent 58%),
+        radial-gradient(900px 520px at 70% 90%, rgba(34,197,94,.16), transparent 55%),
+        var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    button{font:inherit}
+
+    .noise{
+      position:fixed; inset:0; pointer-events:none; opacity:.06; mix-blend-mode:overlay;
+      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/></filter><rect width="180" height="180" filter="url(%23n)" opacity=".8"/></svg>');
+    }
+
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: color-mix(in srgb, var(--bg) 70%, transparent);
+      border-bottom:1px solid var(--stroke);
+    }
+
+    .topbar-inner{height:66px; display:flex; align-items:center; justify-content:space-between; gap:14px}
+
+    .brand{display:flex; align-items:center; gap:12px; min-width:190px}
+    .logo{
+      width:36px; height:36px; border-radius:12px;
+      background: conic-gradient(from 210deg, var(--brand), var(--accent), var(--good), var(--brand));
+      box-shadow: 0 10px 28px rgba(139,92,246,.25);
+      position:relative; overflow:hidden;
+    }
+    .logo:after{content:""; position:absolute; inset:1px; border-radius:11px; background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,0)); mix-blend-mode:overlay}
+
+    .brand-title{display:flex; flex-direction:column; line-height:1.2}
+    .brand-title strong{font-size:14px; letter-spacing:.2px}
+    .brand-title span{font-size:12px; color:var(--muted)}
+
+    .nav{display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end}
+    .nav a{padding:10px 12px; border-radius:999px; color:var(--muted); border:1px solid transparent; transition: background .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease); font-size:13px}
+    .nav a:hover{background:var(--card); border-color:var(--stroke); color:var(--text)}
+
+    .btn{padding:10px 14px; border-radius:999px; border:1px solid var(--stroke); background:var(--card); color:var(--text); box-shadow:var(--shadow2); cursor:pointer; transition: transform .18s var(--ease), background .25s var(--ease), border-color .25s var(--ease); font-size:13px; display:inline-flex; align-items:center; gap:10px; white-space:nowrap}
+    .btn:hover{transform: translateY(-1px); background:var(--card2); border-color: color-mix(in srgb, var(--stroke) 65%, transparent)}
+    .btn.primary{border-color: color-mix(in srgb, var(--brand) 55%, var(--stroke)); background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 70%, transparent), color-mix(in srgb, var(--accent) 35%, transparent)); box-shadow: 0 18px 48px rgba(139,92,246,.20)}
+
+    .kbd{font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--stroke); color:var(--muted); background: color-mix(in srgb, var(--card) 65%, transparent)}
+
+    .hero{padding:56px 0 16px}
+    .hero-grid{display:grid; grid-template-columns: 1.25fr .75fr; gap:22px; align-items:stretch}
+
+    .card{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 88%, transparent); border-radius: var(--r-xl); box-shadow: var(--shadow); overflow:hidden; position:relative}
+    .card.pad{padding:26px}
+
+    .eyebrow{display:inline-flex; align-items:center; gap:10px; font-size:12px; color:var(--muted); border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 65%, transparent); padding:8px 12px; border-radius:999px}
+    .dot{width:8px; height:8px; border-radius:50%; background: radial-gradient(circle at 30% 30%, #fff, color-mix(in srgb, var(--brand) 70%, #000)); box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 18%, transparent)}
+
+    h1{font-size: clamp(28px, 4.4vw, 46px); line-height:1.1; margin:16px 0 12px; letter-spacing:-0.6px}
+    .lead{font-size:15px; color:var(--muted); margin:0 0 18px; max-width:56ch}
+
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+
+    .metrics{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:10px; margin-top:18px}
+    .metric{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 70%, transparent); border-radius: var(--r-lg); padding:14px; position:relative}
+    .metric strong{display:block; font-size:18px; letter-spacing:-0.4px}
+    .metric span{display:block; font-size:12px; color:var(--muted)}
+
+    .profile{height:100%; display:flex; flex-direction:column}
+    .profile-top{padding:18px 18px 0; display:flex; align-items:flex-start; justify-content:space-between; gap:12px}
+    .avatar{width:64px; height:64px; border-radius:22px; border:1px solid var(--stroke); background: radial-gradient(36px 36px at 30% 25%, rgba(255,255,255,.34), rgba(255,255,255,0) 60%), linear-gradient(135deg, color-mix(in srgb, var(--accent) 30%, transparent), color-mix(in srgb, var(--brand) 35%, transparent)), color-mix(in srgb, var(--card) 70%, transparent); box-shadow: 0 16px 44px rgba(0,0,0,.22); position:relative; overflow:hidden}
+    .avatar:before{content:""; position:absolute; inset:-20px; background: conic-gradient(from 10deg, rgba(255,255,255,0), rgba(255,255,255,.22), rgba(255,255,255,0)); animation: spin 8s linear infinite; opacity:.55}
+    @keyframes spin{to{transform: rotate(360deg)}}
+
+    .profile-meta{padding:10px 18px 18px}
+    .profile-meta h2{font-size:16px; margin:10px 0 4px; letter-spacing:-0.2px}
+    .profile-meta p{margin:0; color:var(--muted); font-size:13px}
+
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .chip{font-size:12px; padding:8px 10px; border-radius:999px; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 60%, transparent); color:var(--muted)}
+
+    .profile-bottom{margin-top:auto; padding:16px 18px 18px; border-top:1px solid var(--stroke); display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+    .badge{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 65%, transparent); padding:8px 10px; border-radius:999px; font-size:12px; color:var(--muted); display:inline-flex; align-items:center; gap:8px}
+    .pulse{width:8px; height:8px; border-radius:50%; background:var(--good); box-shadow:0 0 0 0 color-mix(in srgb, var(--good) 40%, transparent); animation:pulse 1.8s var(--ease) infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb, var(--good) 40%, transparent)}70%{box-shadow:0 0 0 12px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+    .section{padding:18px 0 8px}
+    .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin:22px 0 12px}
+    .section-head h3{margin:0; font-size:16px; letter-spacing:-0.2px}
+    .section-head p{margin:0; color:var(--muted); font-size:13px}
+
+    .grid{display:grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap:18px}
+    .span-7{grid-column: span 7}
+    .span-5{grid-column: span 5}
+    .span-6{grid-column: span 6}
+
+    .about p{margin:0; color:var(--muted); font-size:14px}
+
+    .list{display:flex; flex-direction:column; gap:10px; margin-top:14px}
+    .item{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 62%, transparent); border-radius: var(--r-lg); padding:14px; display:flex; gap:12px; align-items:flex-start}
+    .icon{width:38px; height:38px; border-radius:14px; border:1px solid var(--stroke); background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 26%, transparent), color-mix(in srgb, var(--accent) 18%, transparent)); display:grid; place-items:center; flex:0 0 auto; box-shadow: 0 14px 34px rgba(0,0,0,.18)}
+    .item h4{margin:0; font-size:14px; letter-spacing:-0.1px}
+    .item p{margin:2px 0 0; color:var(--muted); font-size:13px}
+
+    .timeline{position:relative; padding-left:18px; display:flex; flex-direction:column; gap:12px; margin-top:10px}
+    .timeline:before{content:""; position:absolute; left:7px; top:6px; bottom:6px; width:2px; background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--brand) 45%, transparent), transparent)}
+
+    .t-item{position:relative; padding:14px; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 62%, transparent); border-radius: var(--r-lg)}
+    .t-item:before{content:""; position:absolute; left:-18px; top:18px; width:12px; height:12px; border-radius:50%; background: radial-gradient(circle at 30% 30%, #fff, color-mix(in srgb, var(--brand) 70%, #000)); box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 18%, transparent); border:1px solid var(--stroke)}
+    .t-item header{display:flex; justify-content:space-between; gap:12px; align-items:baseline; flex-wrap:wrap}
+    .t-item header strong{font-size:14px}
+    .t-item header span{font-size:12px; color:var(--muted)}
+    .t-item p{margin:8px 0 0; color:var(--muted); font-size:13px}
+
+    .skills{display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:10px; margin-top:10px}
+    .skill{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 62%, transparent); border-radius: var(--r-lg); padding:14px}
+    .skill header{display:flex; justify-content:space-between; align-items:center; gap:10px}
+    .skill header strong{font-size:13px}
+    .skill header span{font-size:12px; color:var(--muted)}
+    .bar{margin-top:10px; height:10px; border-radius:999px; background: color-mix(in srgb, var(--card) 55%, transparent); border:1px solid var(--stroke); overflow:hidden}
+    .bar > i{display:block; height:100%; width: var(--w, 70%); border-radius:999px; background: linear-gradient(90deg, color-mix(in srgb, var(--brand) 70%, transparent), color-mix(in srgb, var(--accent) 55%, transparent)); box-shadow: 0 12px 30px rgba(139,92,246,.20)}
+
+    .portfolio{display:grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap:18px}
+    .work{grid-column: span 4; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 60%, transparent); border-radius: var(--r-xl); overflow:hidden; cursor:pointer; transition: transform .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease); min-height: 220px}
+    .work:hover{transform: translateY(-3px); background: color-mix(in srgb, var(--card2) 70%, transparent); border-color: color-mix(in srgb, var(--stroke) 70%, transparent)}
+
+    .thumb{aspect-ratio: 16/10; border-bottom:1px solid var(--stroke); position:relative; overflow:hidden;
+      background: radial-gradient(120px 80px at 18% 20%, rgba(255,255,255,.22), transparent 60%),
+                  linear-gradient(135deg, rgba(139,92,246,.38), rgba(244,114,182,.22), rgba(34,197,94,.18));
+    }
+
+    .thumb svg{position:absolute; inset:0; width:100%; height:100%; opacity:.82}
+
+    .thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition: transform .4s var(--ease)}
+    .work:hover .thumb img{transform: scale(1.05)}
+
+    .work .body{padding:14px 14px 16px}
+    .work .body strong{display:block; font-size:14px}
+    .work .body span{display:block; margin-top:4px; font-size:12px; color:var(--muted)}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .tag{font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 55%, transparent); color:var(--muted)}
+
+    .posts{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:18px}
+    .post{border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 60%, transparent); border-radius: var(--r-xl); overflow:hidden; transition: transform .22s var(--ease), background .22s var(--ease)}
+    .post:hover{transform: translateY(-3px); background: color-mix(in srgb, var(--card2) 70%, transparent)}
+    .post .head{padding:14px 14px 0; display:flex; gap:10px; align-items:flex-start}
+    .pill{padding:6px 10px; border-radius:999px; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 55%, transparent); color:var(--muted); font-size:12px; white-space:nowrap}
+    .post .body{padding:10px 14px 16px}
+    .post .body strong{display:block; font-size:14px}
+    .post .body p{margin:6px 0 0; color:var(--muted); font-size:13px}
+    .post .body a{display:inline-flex; margin-top:10px; color: color-mix(in srgb, var(--brand) 70%, var(--text)); font-size:13px}
+
+    .contact{display:grid; grid-template-columns: 1fr; gap:18px; align-items:stretch}
+    .field{display:flex; flex-direction:column; gap:8px; margin-bottom:12px}
+    label{font-size:12px; color:var(--muted)}
+    input, textarea{width:100%; border-radius:14px; border:1px solid var(--stroke); background: color-mix(in srgb, var(--card) 60%, transparent); color:var(--text); padding:12px; outline:none; transition: border-color .2s var(--ease), background .2s var(--ease)}
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus{border-color: color-mix(in srgb, var(--brand) 55%, var(--stroke)); background: color-mix(in srgb, var(--card2) 70%, transparent)}
+
+    .footer{padding:26px 0 40px; color:var(--muted); font-size:12px}
+    .footer-inner{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center}
+    .sep{height:1px; background:var(--stroke); margin:18px 0 0}
+
+    dialog{width:min(980px, calc(100% - 28px)); border:1px solid var(--stroke); border-radius: var(--r-xl); padding:0; background: color-mix(in srgb, var(--bg) 65%, transparent); color:var(--text); box-shadow: var(--shadow); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px)}
+    dialog::backdrop{background: rgba(0,0,0,.55)}
+
+    .modal-head{padding:18px; border-bottom:1px solid var(--stroke); display:flex; justify-content:space-between; gap:12px; align-items:center}
+    .modal-head strong{font-size:14px}
+    .modal-body{padding:18px}
+    .modal-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:18px}
+    .mock{border:1px solid var(--stroke); border-radius: var(--r-lg); overflow:hidden; background: color-mix(in srgb, var(--card) 60%, transparent)}
+    .mock .mock-top{aspect-ratio: 16/10; background: linear-gradient(135deg, rgba(139,92,246,.38), rgba(244,114,182,.22), rgba(34,197,94,.18)); border-bottom:1px solid var(--stroke)}
+    .modal-body p{margin:0; color:var(--muted); font-size:13px}
+
+    .meta{
+      margin-top: 12px;
+      border: 1px solid var(--stroke);
+      background: color-mix(in srgb, var(--card) 55%, transparent);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .meta-row{
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 12px;
+      padding: 12px 12px;
+      border-top: 1px solid var(--stroke);
+      align-items: start;
+    }
+
+    .meta-row:first-child{border-top:0}
+    .meta-row .k{font-size: 12px; color: var(--muted)}
+    .meta-row .v{font-size: 13px; color: var(--text)}
+
+    .xbtn{border:1px solid var(--stroke); background: var(--card); color:var(--text); border-radius: 12px; padding:10px 12px; cursor:pointer; transition: transform .18s var(--ease), background .25s var(--ease)}
+    .xbtn:hover{transform: translateY(-1px); background: var(--card2)}
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr;}
+      .posts{grid-template-columns: 1fr;}
+      .portfolio{grid-template-columns: repeat(12, minmax(0,1fr));}
+      .work{grid-column: span 6;}
+      .modal-grid{grid-template-columns: 1fr}
+    }
+    @media (max-width: 620px){
+      .work{grid-column: span 12;}
+    }
+    @media (max-width: 720px){
+      .metrics{grid-template-columns: 1fr;}
+      .grid{grid-template-columns: 1fr;}
+      .span-7,.span-5,.span-6{grid-column: auto;}
+      .nav{display:none;}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important; transition:none !important}
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="#top" aria-label="返回顶部">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="brand-title">
+            <strong id="name">于同兰</strong>
+            <span>全屋定制设计师 · 资深方案落地 · 中国</span>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="页面导航">
+          <a href="#about">关于</a>
+          <a href="#experience">经历</a>
+          <a href="#skills">技能</a>
+          <a href="#portfolio">作品</a>
+          <a href="#posts">随笔</a>
+          <a href="#contact">联系</a>
+        </nav>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+          <button class="btn" id="copyEmailBtn" type="button" title="复制邮箱">
+            复制邮箱
+            <span class="kbd">Ctrl+C</span>
+          </button>
+          <a class="btn primary" href="#contact">合作咨询</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card pad">
+            <div class="eyebrow"><span class="dot" aria-hidden="true"></span> 专注全屋定制与收纳系统 · 方案可落地、交付可追踪</div>
+            <h1>用更懂生活的户型规划，
+              <span style="color: color-mix(in srgb, var(--brand) 70%, var(--text));">让家的每一寸都更好用</span>
+            </h1>
+            <p class="lead">我是于同兰，全屋定制高级设计师。长期服务改善型住宅与精装改造，擅长户型动线与收纳规划、柜体系统设计（衣柜/橱柜/书柜/衣帽间）、材质工艺与五金配置、现场交底与安装验收。工作方式偏“清晰需求 + 清晰预算 + 清晰交付”：让方案不仅好看，更能按期落地。</p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="#portfolio">查看精选作品</a>
+              <button class="btn" type="button" id="downloadBtn">导出 PDF / 打印</button>
+              <span class="badge"><span class="pulse" aria-hidden="true"></span> 可承接长期/项目制合作</span>
+            </div>
+
+            <div class="metrics" aria-label="关键数据">
+              <div class="metric"><strong>10+</strong><span>年全屋定制设计经验</span></div>
+              <div class="metric"><strong>200+</strong><span>户型方案与落地交付</span></div>
+              <div class="metric"><strong>4+</strong><span>专长方向：收纳 / 动线 / 柜体系统 / 落地交付</span></div>
+            </div>
+          </div>
+
+          <aside class="card profile" aria-label="个人信息卡">
+            <div class="profile-top">
+              <div>
+                <div class="avatar" aria-hidden="true"></div>
+              </div>
+              <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; justify-content:flex-end;">
+                <span class="badge">上海 / 可远程</span>
+                <span class="badge">中文 / English</span>
+              </div>
+            </div>
+
+            <div class="profile-meta">
+              <h2>于同兰 · 全屋定制高级设计师</h2>
+              <p>户型规划 / 收纳系统 / 柜体结构与工艺 / 五金配置 / 现场交底与验收</p>
+
+              <div class="chips" aria-label="关键词">
+                <span class="chip">收纳规划</span>
+                <span class="chip">动线优化</span>
+                <span class="chip">预算可控</span>
+                <span class="chip">落地交付</span>
+              </div>
+            </div>
+
+            <div class="profile-bottom">
+              <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <span class="badge">邮箱：<span id="email">hello@yourdomain.com</span></span>
+                <span class="badge">微信：DOM-Nov11</span>
+              </div>
+              <a class="btn" href="#contact">联系我</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h3>关于我</h3>
+            <p>定位、方法论与工作方式</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card pad span-7 about">
+            <p>我的工作流程通常从“真实生活需求”开始：家庭成员、收纳习惯、动线痛点与预算边界；再通过户型分析建立空间规划（动静分区、通行尺度、收纳容量）；最后把方案落到柜体结构、板材与五金、工艺节点与现场交底上，确保安装后尺寸准确、使用顺手、维护方便。</p>
+
+            <div class="list" aria-label="服务内容">
+              <div class="item">
+                <div class="icon" aria-hidden="true">✦</div>
+                <div>
+                  <h4>户型规划 / 动线与收纳</h4>
+                  <p>基于家庭结构与生活习惯进行动线优化、收纳分区与容量测算，明确每一处柜体的“放什么、怎么拿”。</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="icon" aria-hidden="true">▦</div>
+                <div>
+                  <h4>全屋定制柜体系统设计</h4>
+                  <p>衣柜/橱柜/书柜/玄关柜/衣帽间等系统方案，兼顾结构合理、使用顺手、颜值统一与可生产性。</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="icon" aria-hidden="true">Aa</div>
+                <div>
+                  <h4>材质工艺 / 五金配置 / 交付把控</h4>
+                  <p>板材与环保等级、封边与工艺节点、五金选型与开合方式，配合现场交底与安装验收，降低返工与扯皮。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card pad span-5" id="experience">
+            <div class="section-head" style="margin-top:0">
+              <div>
+                <h3>经历</h3>
+                <p>你可按真实情况替换公司/项目</p>
+              </div>
+            </div>
+
+            <div class="timeline" aria-label="工作经历">
+              <div class="t-item">
+                <header>
+                  <strong>全屋定制高级设计师 · 方案与落地</strong>
+                  <span>2020 — 现在</span>
+                </header>
+                <p>负责户型测量与需求梳理、全屋柜体方案设计与报价、材质/五金配置、节点交底与现场跟进；对接工厂与安装团队，控制尺寸准确性与交付质量。</p>
+              </div>
+              <div class="t-item">
+                <header>
+                  <strong>全屋定制设计师 · 住宅精装改造</strong>
+                  <span>2016 — 2020</span>
+                </header>
+                <p>服务改善型客户与精装房改造项目，完成橱柜/衣柜/玄关/阳台等空间的定制设计；建立方案模板与标准化清单，提升沟通效率与落地稳定性。</p>
+              </div>
+              <div class="t-item">
+                <header>
+                  <strong>定制设计师 · 入行与系统训练</strong>
+                  <span>2012 — 2016</span>
+                </header>
+                <p>从量房、制图到生产安装的全流程学习，掌握基础结构与工艺规则；参与多类型户型项目，积累常见问题的标准解决方案。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card pad span-6" id="skills">
+            <div class="section-head" style="margin-top:0">
+              <div>
+                <h3>技能</h3>
+                <p>可按你的实际熟练度调整</p>
+              </div>
+            </div>
+
+            <div class="skills" aria-label="技能条">
+              <div class="skill">
+                <header><strong>户型规划与收纳体系</strong><span>精通</span></header>
+                <div class="bar" style="--w: 92%"><i></i></div>
+              </div>
+              <div class="skill">
+                <header><strong>柜体结构与工艺节点</strong><span>精通</span></header>
+                <div class="bar" style="--w: 90%"><i></i></div>
+              </div>
+              <div class="skill">
+                <header><strong>材质搭配与五金选型</strong><span>熟练</span></header>
+                <div class="bar" style="--w: 86%"><i></i></div>
+              </div>
+              <div class="skill">
+                <header><strong>现场交底与安装验收</strong><span>熟练</span></header>
+                <div class="bar" style="--w: 84%"><i></i></div>
+              </div>
+            </div>
+
+            <div class="list" style="margin-top:14px" aria-label="工具">
+              <div class="item">
+                <div class="icon" aria-hidden="true">Ps</div>
+                <div>
+                  <h4>工具与软件</h4>
+                  <p>AutoCAD / SketchUp / 3ds Max（或酷家乐）/ Excel（报价清单）/ PS（效果图与方案呈现）。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card pad span-6">
+            <div class="section-head" style="margin-top:0">
+              <div>
+                <h3>服务方式</h3>
+                <p>适合接单与长期合作展示</p>
+              </div>
+            </div>
+
+            <div class="list" aria-label="服务方式列表">
+              <div class="item">
+                <div class="icon" aria-hidden="true">①</div>
+                <div>
+                  <h4>量房与需求沟通</h4>
+                  <p>确认家庭成员与生活习惯、收纳清单、风格偏好与预算边界；现场复尺并记录管线/梁柱/窗台等关键约束。</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="icon" aria-hidden="true">②</div>
+                <div>
+                  <h4>方案设计与报价</h4>
+                  <p>输出平面规划与柜体布局、立面与细部结构、材质与五金配置建议，并以清单化报价确保可比价、可控成本。</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="icon" aria-hidden="true">③</div>
+                <div>
+                  <h4>下单、交底与验收</h4>
+                  <p>确认尺寸与生产图纸，安排现场交底与安装跟进；按节点验收（对缝/封边/开合/抽拉/收口），确保交付质量与使用体验。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h3>个人作品集</h3>
+            <p>图片源自 Unsplash；如遇加载失败，系统会自动显示文本占位图</p>
+          </div>
+        </div>
+
+        <div class="portfolio" aria-label="作品网格">
+          <article class="work" data-title="三房两厅全屋定制 / 动线与收纳规划" data-desc="基于家庭成员与生活习惯重构动线：玄关收纳、餐边与厨房联动、客厅展示与储物、卧室衣物分区；在预算内完成柜体系统化规划与落地。" data-tags="全屋定制,收纳,动线" data-img="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" data-style="功能优先 / 细节克制 / 统一比例" data-category="改善型住宅：全屋柜体系统方案" data-concept="把“常用—偶用—囤货”分层管理：高频触手可及，低频集中收纳；用统一柜门比例与留白控制整体观感。" data-inspiration="居住动线分析 + 收纳分区方法" data-role="方案设计与落地：量房、布局、结构、材质与五金、交底验收" data-deliverables="平面与立面、柜体结构图、报价清单、材质与五金清单、安装验收要点">
+            <div class="thumb" aria-hidden="true"><img alt="全屋定制案例" loading="lazy" src="https://picsum.photos/400/300?random=1" /></div>
+            <div class="body">
+              <strong>三房两厅全屋定制 / 动线与收纳规划</strong>
+              <span>结构化收纳 + 可落地柜体系统</span>
+              <div class="tags"><span class="tag">全屋</span><span class="tag">收纳</span><span class="tag">动线</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="小户型厨房 + 餐边柜联动 / 高效收纳" data-desc="在有限面积内提升厨房操作效率：动线分区（洗/切/炒/收）、高低台与电器位规划、餐边柜与冰箱位联动；兼顾台面整洁与囤货容量。" data-tags="橱柜,餐边柜,收纳" data-img="https://images.unsplash.com/photo-1556911220-e67041e96259?w=800&q=80" data-style="操作顺手 / 分区明确 / 易清洁" data-category="小户型：橱柜系统与餐边联动" data-concept="把“频次”写进设计：常用区减少弯腰与走动，电器位预留散热与插座；用抽拉与分隔件提升收纳效率。" data-inspiration="厨房工作三角 + 收纳人体工学" data-role="橱柜方案：布局、结构、台面与五金、安装交底" data-deliverables="平面/立面、台面与电器位、五金清单、收口与防水节点说明">
+            <div class="thumb" aria-hidden="true"><img alt="厨房橱柜案例" loading="lazy" src="https://picsum.photos/400/300?random=2" /></div>
+            <div class="body">
+              <strong>小户型厨房 + 餐边柜联动 / 高效收纳</strong>
+              <span>操作动线优化 + 囤货容量提升</span>
+              <div class="tags"><span class="tag">橱柜</span><span class="tag">餐边</span><span class="tag">收纳</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="衣帽间系统 / 分区与五金配置" data-desc="围绕衣物类型与使用频次做分区：长短挂、叠放、抽屉、首饰/包包、行李区；配置抽拉篮、裤架、灯带与感应开关，兼顾容量与体验。" data-tags="衣帽间,五金,分区" data-img="https://images.unsplash.com/photo-1558997559-8692750a9f5c?w=800&q=80" data-style="分区清晰 / 细节到位 / 维护友好" data-category="卧室空间：衣帽间系统设计" data-concept="先用清单确定“需要多少格”，再确定“怎么拿更顺手”：抽屉放高频，小件用分隔，挂放保形，留出换季与行李区。" data-inspiration="衣物收纳清单法 + 人体工学高度" data-role="结构与五金：分区、灯光、开合方式、安装验收" data-deliverables="分区方案、五金清单、灯带与电位建议、安装验收检查表">
+            <div class="thumb" aria-hidden="true"><img alt="衣帽间案例" loading="lazy" src="https://picsum.photos/400/300?random=3" /></div>
+            <div class="body">
+              <strong>衣帽间系统 / 分区与五金配置</strong>
+              <span>清单化收纳 + 五金到位</span>
+              <div class="tags"><span class="tag">衣帽间</span><span class="tag">五金</span><span class="tag">体验</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="玄关柜 + 餐边柜一体化 / 进门收纳" data-desc="解决进门杂物、鞋帽与钥匙动线：换鞋凳、开放格、雨具区、鞋柜分区与除味通风；餐边柜补充小家电与高频餐具收纳，实现“进门即收纳”。" data-tags="玄关柜,餐边柜,收纳" data-img="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80" data-style="动线顺畅 / 分区清晰 / 易维护" data-category="公共区域：玄关与餐边联动" data-concept="以“回家顺手”为准则：外出物品有固定落点，鞋帽按季节分层，常用餐具与小家电集中一侧，减少来回走动。" data-inspiration="回家动线 + 高低频收纳法" data-role="方案设计：柜体分区、结构细节、五金配置、交底验收" data-deliverables="平面/立面、分区清单、五金与电位建议、安装验收要点">
+            <div class="thumb" aria-hidden="true"><img alt="玄关餐边柜案例" loading="lazy" src="https://picsum.photos/400/300?random=4" /></div>
+            <div class="body">
+              <strong>玄关柜 + 餐边柜一体化 / 进门收纳</strong>
+              <span>进门动线更顺手</span>
+              <div class="tags"><span class="tag">玄关</span><span class="tag">餐边</span><span class="tag">收纳</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="儿童房定制 / 学习区与成长收纳" data-desc="围绕学习、展示与成长需求：书桌尺度、书柜分区、玩具与绘本收纳、衣物换季区；预留可调整层板与可扩展模块，兼顾安全与耐用。" data-tags="儿童房,书柜,收纳" data-img="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" data-style="安全圆角 / 低维护 / 可成长" data-category="卧室空间：儿童房系统定制" data-concept="把“成长变化”写进柜体：可调层板适配不同阶段收纳，桌面与照明考虑长时间学习，常用物品触手可及。" data-inspiration="儿童人体工学 + 分区收纳" data-role="方案与落地：布局、结构、环保材料建议、交底验收" data-deliverables="分区方案、结构图、材料与五金清单、使用与维护建议">
+            <div class="thumb" aria-hidden="true"><img alt="儿童房定制案例" loading="lazy" src="https://picsum.photos/400/300?random=5" /></div>
+            <div class="body">
+              <strong>儿童房定制 / 学习区与成长收纳</strong>
+              <span>可成长的分区体系</span>
+              <div class="tags"><span class="tag">儿童房</span><span class="tag">书柜</span><span class="tag">收纳</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="电视墙收纳柜 / 隐藏式设备与展示" data-desc="兼顾展示与收纳：电视墙、储物柜、路由器与设备隐藏、线管预留、扫地机器人与电位规划；确保日常使用整洁、维护方便、开合顺畅。" data-tags="客厅,电视墙,收纳" data-img="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" data-style="整洁克制 / 设备隐藏 / 好维护" data-category="客厅空间：电视墙与储物系统" data-concept="把“线”和“设备”提前规划：预留散热与检修空间，电位与穿线口一次到位；开放展示与封闭收纳比例可按生活习惯调整。" data-inspiration="设备隐藏设计 + 展示/收纳比例法" data-role="方案设计：结构与电位、五金、安装验收" data-deliverables="柜体结构与电位图、五金建议、检修与散热说明、验收清单">
+            <div class="thumb" aria-hidden="true"><img alt="电视墙收纳柜" loading="lazy" src="https://picsum.photos/400/300?random=6" /></div>
+            <div class="body">
+              <strong>电视墙收纳柜 / 隐藏式设备与展示</strong>
+              <span>设备与走线更整洁</span>
+              <div class="tags"><span class="tag">客厅</span><span class="tag">电视墙</span><span class="tag">收纳</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="阳台柜 + 家政收纳 / 清洁动线" data-desc="整合洗烘、清洁与囤货：洗衣机/烘干机堆叠或并排、台盆与清洁区、拖把扫把隐藏、消毒/熨烫收纳；提升家务效率并保持视觉整洁。" data-tags="阳台柜,家政,收纳" data-img="https://images.unsplash.com/photo-1621905274607-969f9cac8e92?w=800&q=80" data-style="家务友好 / 易清洁 / 隐藏收纳" data-category="生活阳台：家政系统柜" data-concept="把家务流程串起来：洗—晾—叠—收；清洁工具有固定位置，湿区耐水材质与通风优先，避免后期发霉。" data-inspiration="家务动线 + 湿区材料选择" data-role="方案与落地：布局、耐水材料建议、五金、电位" data-deliverables="阳台柜方案、耐水与通风建议、电位清单、验收要点">
+            <div class="thumb" aria-hidden="true"><img alt="阳台家政收纳" loading="lazy" src="https://picsum.photos/400/300?random=7" /></div>
+            <div class="body">
+              <strong>阳台柜 + 家政收纳 / 清洁动线</strong>
+              <span>家务流程更高效</span>
+              <div class="tags"><span class="tag">阳台</span><span class="tag">家政</span><span class="tag">收纳</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="全屋柜体风格统一 / 门型与拉手策略" data-desc="用统一规则控制全屋观感：柜门分割比例、门型（平板/造型）、拉手（无拉手/明拉手）、踢脚与收口；兼顾颜值与耐用清洁，减少“拼凑感”。" data-tags="门型,拉手,统一" data-img="https://images.unsplash.com/photo-1615873968403-89e0618529a8?w=800&q=80" data-style="统一比例 / 细节克制 / 易清洁" data-category="全屋定制：风格与细节统一" data-concept="先定“规则”再谈“好看”：全屋保持同一套门型与比例，局部用材质与灯光做重点，整体更高级耐看。" data-inspiration="系统化设计思维 + 细节统一" data-role="方案把控：门型比例、五金与收口细节、落地验收" data-deliverables="门型与拉手方案、收口节点建议、材质清单、验收要点">
+            <div class="thumb" aria-hidden="true"><img alt="柜体风格与门型" loading="lazy" src="https://picsum.photos/400/300?random=8" /></div>
+            <div class="body">
+              <strong>全屋柜体风格统一 / 门型与拉手策略</strong>
+              <span>统一规则，观感更高级</span>
+              <div class="tags"><span class="tag">门型</span><span class="tag">细节</span><span class="tag">统一</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="入户到卧室收纳清单 / 容量测算" data-desc="把家庭物品清单化并做容量测算：衣物、被褥、行李、杂物、清洁、儿童用品等；用“格子数量”而不是“感觉”指导柜体尺寸分配，降低后期爆仓。" data-tags="清单,容量,收纳" data-img="https://images.unsplash.com/photo-1594235282218-e3223ecb8e88?w=800&q=80" data-style="理性规划 / 预算可控 / 可验证" data-category="全屋定制：收纳容量规划" data-concept="先列清单再分配：每类物品确定数量与收纳方式（挂/叠/抽/开放），再按频次决定位置，方案更稳定也更好沟通。" data-inspiration="收纳清单法 + 频次分层" data-role="规划与沟通：清单、容量测算、柜体分区与结构建议" data-deliverables="收纳清单、容量测算表、分区建议、预算与优先级建议">
+            <div class="thumb" aria-hidden="true"><img alt="收纳清单与容量规划" loading="lazy" src="https://picsum.photos/400/300?random=9" /></div>
+            <div class="body">
+              <strong>入户到卧室收纳清单 / 容量测算</strong>
+              <span>用数据让方案更可控</span>
+              <div class="tags"><span class="tag">清单</span><span class="tag">容量</span><span class="tag">规划</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="卧室衣柜系统 / 挂区比例与抽屉布局" data-desc="根据衣物类型确定挂区比例（长挂/短挂/叠放），抽屉与隔板高度按实际衣物尺寸配置；结合灯带、首饰收纳与换季区，让衣柜更好用也更耐用。" data-tags="衣柜,分区,五金" data-img="https://images.unsplash.com/photo-1595515106962-0901e95265cd?w=800&q=80" data-style="结构合理 / 细节到位 / 易维护" data-category="卧室空间：衣柜系统设计" data-concept="用衣物清单确定比例：挂区解决易皱衣物，抽屉收纳小件，叠放区留给毛衣与家居服；预留换季与行李区避免后期爆仓。" data-inspiration="衣物清单法 + 人体工学高度" data-role="方案与落地：结构分区、五金建议、安装验收" data-deliverables="衣柜结构图、分区清单、五金清单、验收要点">
+            <div class="thumb" aria-hidden="true"><img alt="卧室衣柜系统" loading="lazy" src="https://picsum.photos/400/300?random=10" /></div>
+            <div class="body">
+              <strong>卧室衣柜系统 / 挂区比例与抽屉布局</strong>
+              <span>分区合理，更顺手</span>
+              <div class="tags"><span class="tag">衣柜</span><span class="tag">分区</span><span class="tag">五金</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="板材与封边工艺 / 预算内的耐用选择" data-desc="在预算内选择更耐用、更安心的组合：环保等级、板材类型、封边方式与胶水、耐水与耐刮考虑；把风险点前置到选材阶段，减少后期异味与开胶。" data-tags="板材,封边,工艺" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?w=800&q=80" data-style="参数清晰 / 可落地 / 可验收" data-category="全屋定制：材料与工艺把控" data-concept="不只看单价：湿区优先耐水与封边，儿童房优先环保与易清洁；把“可验收指标”写进沟通，减少扯皮。" data-inspiration="材料参数对比 + 现场验收要点" data-role="材料建议：选材对比、工艺节点、验收标准" data-deliverables="材料对比表、工艺节点清单、验收要点与风险提示">
+            <div class="thumb" aria-hidden="true"><img alt="板材与工艺" loading="lazy" src="https://picsum.photos/400/300?random=11" /></div>
+            <div class="body">
+              <strong>板材与封边工艺 / 预算内的耐用选择</strong>
+              <span>参数清晰，少踩坑</span>
+              <div class="tags"><span class="tag">板材</span><span class="tag">封边</span><span class="tag">工艺</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="主卧衣柜 + 梳妆台一体 / 细部收口" data-desc="在卧室空间内整合衣柜与梳妆：抽屉高低分配、台面与镜位、电位与灯光预留、门板分割与收口处理；兼顾使用便利与整体观感。" data-tags="主卧,衣柜,收口" data-img="https://images.unsplash.com/photo-1616594079960-fae29631778c?w=800&q=80" data-style="一体化 / 细节克制 / 维护友好" data-category="卧室空间：衣柜系统与梳妆联动" data-concept="把“早晚高频动作”纳入设计：取衣—换装—梳妆形成顺手动线；抽屉收纳小件，台面预留充电与灯光，细部收口提前定方案。" data-inspiration="卧室高频动线 + 细部收口节点" data-role="方案与落地：结构分区、电位灯光、五金与收口、验收" data-deliverables="平面/立面、分区清单、电位与灯光建议、收口节点、验收要点">
+            <div class="thumb" aria-hidden="true"><img alt="主卧衣柜梳妆一体" loading="lazy" src="https://picsum.photos/400/300?random=12" /></div>
+            <div class="body">
+              <strong>主卧衣柜 + 梳妆台一体 / 细部收口</strong>
+              <span>一体化规划，细节更稳</span>
+              <div class="tags"><span class="tag">主卧</span><span class="tag">衣柜</span><span class="tag">收口</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="定制落地交付清单 / 节点验收" data-desc="把设计落地拆成可验收节点：复尺、下单图纸、进场保护、安装过程检查、收口与五金调试、完工验收；用清单减少返工与扯皮。" data-tags="交付,验收,清单" data-img="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" data-style="标准化 / 可追踪 / 风险前置" data-category="全屋定制：交付与质量管理" data-concept="把“不可控”变成“可检查”：每个节点都有检查项与拍照留档；问题在安装当下解决，避免完工后返工成本飙升。" data-inspiration="项目管理思维 + 现场验收要点" data-role="交付管理：节点拆分、验收要点、问题闭环" data-deliverables="节点清单、验收表、问题整改闭环记录（模板）">
+            <div class="thumb" aria-hidden="true"><img alt="交付与验收清单" loading="lazy" src="https://picsum.photos/400/300?random=13" /></div>
+            <div class="body">
+              <strong>定制落地交付清单 / 节点验收</strong>
+              <span>可追踪的交付流程</span>
+              <div class="tags"><span class="tag">交付</span><span class="tag">验收</span><span class="tag">清单</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="预算拆解与报价清单 / 可比价" data-desc="把全屋定制报价拆成可比价清单：柜体投影/展开、门板与台面、五金、功能配件、收口与安装；明确增项规则，避免后期不断加价。" data-tags="预算,报价,清单" data-img="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" data-style="清单化 / 透明可比 / 预算可控" data-category="全屋定制：预算与报价体系" data-concept="用清单替代口头承诺：同口径才能比价；先定必需项，再做可选升级项，预算更可控，决策也更快。" data-inspiration="成本拆解 + 项目清单管理" data-role="报价与把控：清单口径、增项规则、预算优先级" data-deliverables="报价清单模板、增项规则说明、预算优先级建议">
+            <div class="thumb" aria-hidden="true"><img alt="预算与报价清单" loading="lazy" src="https://picsum.photos/400/300?random=14" /></div>
+            <div class="body">
+              <strong>预算拆解与报价清单 / 可比价</strong>
+              <span>预算透明，更好决策</span>
+              <div class="tags"><span class="tag">预算</span><span class="tag">报价</span><span class="tag">清单</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="全屋风格定调 / 颜色与材质搭配" data-desc="从整体风格出发建立材料与色彩规则：柜门颜色、木纹/石纹选择、金属点缀、墙地顶与软装的协调；避免“每个空间都好看但放一起不统一”。" data-tags="风格,材质,色彩" data-img="https://images.unsplash.com/photo-1502005229766-3c6227c4679b?w=800&q=80" data-style="统一调性 / 低饱和 / 重点突出" data-category="全屋定制：风格与材质策略" data-concept="先定大面（墙地顶与柜体），再定点缀（金属/灯光/局部木色）；用统一规则控制变化，整体更耐看也更容易落地。" data-inspiration="材质板（Material Board）+ 统一规则" data-role="风格把控：材料建议、样板确认、落地一致性" data-deliverables="材料与色彩方案、样板确认清单、落地注意事项">
+            <div class="thumb" aria-hidden="true"><img alt="全屋风格与材质搭配" loading="lazy" src="https://picsum.photos/400/300?random=15" /></div>
+            <div class="body">
+              <strong>全屋风格定调 / 颜色与材质搭配</strong>
+              <span>统一规则，整体更高级</span>
+              <div class="tags"><span class="tag">风格</span><span class="tag">材质</span><span class="tag">色彩</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="现场复尺与问题预判 / 避坑" data-desc="复尺不仅是量尺寸：重点核对墙体垂直、地面水平、门洞与踢脚线、管线位置、窗台高度等；提前发现问题并给出调整方案，减少安装翻车。" data-tags="复尺,避坑,现场" data-img="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80" data-style="风险前置 / 细节严谨 / 可交付" data-category="全屋定制：复尺与风险控制" data-concept="把“不可见的偏差”显性化：记录偏差并确定处理方式（找平/收口/补板/调整柜体）；在生产前解决，成本最低。" data-inspiration="现场管理 + 安装常见问题库" data-role="现场把控：复尺记录、问题预判、节点方案" data-deliverables="复尺记录表、风险点清单、节点处理方案">
+            <div class="thumb" aria-hidden="true"><img alt="现场复尺与避坑" loading="lazy" src="https://picsum.photos/400/300?random=16" /></div>
+            <div class="body">
+              <strong>现场复尺与问题预判 / 避坑</strong>
+              <span>风险前置，落地更稳</span>
+              <div class="tags"><span class="tag">复尺</span><span class="tag">避坑</span><span class="tag">现场</span></div>
+            </div>
+          </article>
+
+          <article class="work" data-title="小空间榻榻米 + 书柜 / 多功能" data-desc="在次卧或书房实现多功能：榻榻米收纳、书柜展示与封闭结合、可变书桌；预留通风与检修，兼顾容量、舒适与后期维护。" data-tags="榻榻米,书房,多功能" data-img="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" data-style="多功能 / 收纳最大化 / 好维护" data-category="次卧/书房：多功能定制" data-concept="先定使用优先级：睡眠/办公/收纳；用模块化结构提高复用性，开放与封闭比例按使用频次设置，避免积灰与凌乱。" data-inspiration="小空间收纳策略 + 模块化设计" data-role="方案与落地：布局、结构、五金、电位与验收" data-deliverables="平面/立面、结构图、电位建议、验收要点">
+            <div class="thumb" aria-hidden="true"><img alt="榻榻米与书柜定制" loading="lazy" src="https://picsum.photos/400/300?random=17" /></div>
+            <div class="body">
+              <strong>小空间榻榻米 + 书柜 / 多功能</strong>
+              <span>收纳与使用一起满足</span>
+              <div class="tags"><span class="tag">榻榻米</span><span class="tag">书房</span><span class="tag">多功能</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="posts">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h3>随笔 / 全屋定制观点</h3>
+            <p>记录户型规划、收纳与材料工艺的实战经验</p>
+          </div>
+        </div>
+
+        <div class="posts" aria-label="文章列表">
+          <article class="post">
+            <div class="head"><span class="pill">方法论</span><span class="pill">收纳</span></div>
+            <div class="body">
+              <strong>户型先行：动线与收纳如何一起做对</strong>
+              <p>先明确家庭成员与生活习惯，再做动线与收纳分区；把“常用/偶用/囤货”分层，空间会更顺手。</p>
+              <a href="#contact">想合作？留言交流 →</a>
+            </div>
+          </article>
+          <article class="post">
+            <div class="head"><span class="pill">材料</span><span class="pill">落地</span></div>
+            <div class="body">
+              <strong>板材与环保等级怎么选：把“参数”翻译成可落地的选择</strong>
+              <p>关注环保等级、封边工艺与使用场景，别只看单价；把预算花在“看不见但决定耐用”的地方。</p>
+              <a href="#contact">获取打样清单 →</a>
+            </div>
+          </article>
+          <article class="post">
+            <div class="head"><span class="pill">职业</span><span class="pill">沟通</span></div>
+            <div class="body">
+              <strong>五金别踩坑：抽屉、铰链、拉手怎么选更省心</strong>
+              <p>按使用频次选承重与阻尼，预留安装与维修空间；一次选对，后期少异响、少下垂、少返工。</p>
+              <a href="#contact">一起把项目做顺 →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h3>联系与合作</h3>
+            <p>此表单仅用于展示；你可以接入邮箱/表单服务</p>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div class="card pad">
+            <form id="contactForm">
+              <div class="field">
+                <label for="cname">你的称呼</label>
+                <input id="cname" name="cname" placeholder="例如：张先生 / 李女士" autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="cemail">联系方式（邮箱/微信）</label>
+                <input id="cemail" name="cemail" placeholder="例如：name@email.com / wechat_id" autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="cmsg">项目简述</label>
+                <textarea id="cmsg" name="cmsg" placeholder="户型/面积/需求点/风格偏好/时间节点/预算范围（可选）"></textarea>
+              </div>
+              <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+                <button class="btn primary" type="submit">发送（演示）</button>
+                <span style="color: var(--muted); font-size: 12px;">或直接邮件：<span id="email2">hello@yourdomain.com</span></span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <span>© <span id="year"></span> <span id="name2">于同兰</span> · 全屋定制高级设计师</span>
+          <span>本页为可编辑模板：你可自由修改内容与图片</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="workModal" aria-label="作品详情弹窗">
+    <div class="modal-head">
+      <strong id="modalTitle">作品标题</strong>
+      <button class="xbtn" id="closeModal" type="button" aria-label="关闭">关闭</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-grid">
+        <div class="mock" aria-hidden="true">
+          <div class="mock-top"></div>
+        </div>
+        <div>
+          <p id="modalDesc">作品描述</p>
+          <div class="tags" id="modalTags" style="margin-top:12px"></div>
+          <div class="meta" aria-label="作品信息">
+            <div class="meta-row"><div class="k">风格</div><div class="v" id="modalStyle">—</div></div>
+            <div class="meta-row"><div class="k">品类/产品</div><div class="v" id="modalCategory">—</div></div>
+            <div class="meta-row"><div class="k">构思</div><div class="v" id="modalConcept">—</div></div>
+            <div class="meta-row"><div class="k">灵感</div><div class="v" id="modalInspiration">—</div></div>
+            <div class="meta-row"><div class="k">我的职责</div><div class="v" id="modalRole">—</div></div>
+            <div class="meta-row"><div class="k">交付物</div><div class="v" id="modalDeliverables">—</div></div>
+          </div>
+          <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="btn primary" id="copyTitle" type="button">复制标题</button>
+            <button class="btn" id="printWork" type="button">打印此页</button>
+          </div>
+          <p style="margin-top:14px; color: var(--faint); font-size: 12px;">提示：把这里换成你真实项目：项目背景、你的职责、设计策略、关键视觉规则、落地物料与结果。</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    const email = $('#email')?.textContent?.trim() || 'hello@yourdomain.com';
+    $('#email2').textContent = email;
+    $('#year').textContent = new Date().getFullYear();
+    $('#name2').textContent = $('#name').textContent;
+
+    function toast(text){
+      let t = $('#toast');
+      if(!t){
+        t = document.createElement('div');
+        t.id = 'toast';
+        t.style.cssText = [
+          'position:fixed',
+          'left:50%',
+          'bottom:22px',
+          'transform:translateX(-50%)',
+          'padding:10px 14px',
+          'border-radius:999px',
+          'border:1px solid var(--stroke)',
+          'background: color-mix(in srgb, var(--card2) 75%, transparent)',
+          'backdrop-filter: blur(12px)',
+          'box-shadow: var(--shadow2)',
+          'color: var(--text)',
+          'font-size: 13px',
+          'z-index:999',
+          'opacity:0',
+          'transition: opacity .22s var(--ease), transform .22s var(--ease)'
+        ].join(';');
+        document.body.appendChild(t);
+      }
+      t.textContent = text;
+      t.style.opacity = '1';
+      t.style.transform = 'translateX(-50%) translateY(-4px)';
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=>{
+        t.style.opacity = '0';
+        t.style.transform = 'translateX(-50%) translateY(0px)';
+      }, 1600);
+    }
+
+    async function copy(text){
+      try{
+        await navigator.clipboard.writeText(text);
+        toast('已复制：' + text);
+      }catch{
+        toast('复制失败，请手动复制');
+      }
+    }
+
+    $('#copyEmailBtn').addEventListener('click', ()=> copy($('#email').textContent.trim()));
+
+    document.addEventListener('keydown', (e)=>{
+      const isMac = navigator.platform.toLowerCase().includes('mac');
+      const mod = isMac ? e.metaKey : e.ctrlKey;
+      if(mod && e.key.toLowerCase() === 'k'){
+        e.preventDefault();
+        location.hash = '#contact';
+        toast('已跳转到联系');
+      }
+    });
+
+    $('#downloadBtn').addEventListener('click', ()=> window.print());
+
+    const modal = $('#workModal');
+    const modalTitle = $('#modalTitle');
+    const modalDesc = $('#modalDesc');
+    const modalTags = $('#modalTags');
+    const modalStyle = $('#modalStyle');
+    const modalCategory = $('#modalCategory');
+    const modalConcept = $('#modalConcept');
+    const modalInspiration = $('#modalInspiration');
+    const modalRole = $('#modalRole');
+    const modalDeliverables = $('#modalDeliverables');
+
+    function openWork(el){
+      modalTitle.textContent = el.dataset.title || '作品';
+      modalDesc.textContent = el.dataset.desc || '';
+      const img = el.getAttribute('data-img') || '';
+      const mockTop = document.querySelector('.mock .mock-top');
+      if(mockTop){
+        // 自动降级处理：如果 Unsplash 图片在弹窗中也加载失败，这里也可以做检测
+        // 但简单起见，我们假设小图能加载，大图就能加载
+        // 如果 img 包含 unsplash，则直接使用
+        if(img){
+           mockTop.style.backgroundImage = `url("${img}")`;
+           mockTop.style.backgroundSize = 'cover';
+           mockTop.style.backgroundPosition = 'center';
+        }else{
+           mockTop.style.backgroundImage = '';
+        }
+      }
+
+      if(modalStyle) modalStyle.textContent = el.dataset.style || '—';
+      if(modalCategory) modalCategory.textContent = el.dataset.category || '—';
+      if(modalConcept) modalConcept.textContent = el.dataset.concept || '—';
+      if(modalInspiration) modalInspiration.textContent = el.dataset.inspiration || '—';
+      if(modalRole) modalRole.textContent = el.dataset.role || '—';
+      if(modalDeliverables) modalDeliverables.textContent = el.dataset.deliverables || '—';
+
+      modalTags.innerHTML = '';
+      const tags = (el.dataset.tags || '').split(',').map(s=>s.trim()).filter(Boolean);
+      for(const t of tags){
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.textContent = t;
+        modalTags.appendChild(span);
+      }
+      modal.showModal();
+    }
+
+    $$('.work').forEach(w => w.addEventListener('click', ()=> openWork(w)));
+    $('#closeModal').addEventListener('click', ()=> modal.close());
+    modal.addEventListener('click', (e)=>{
+      const rect = modal.getBoundingClientRect();
+      const inDialog = (rect.top <= e.clientY && e.clientY <= rect.bottom && rect.left <= e.clientX && e.clientX <= rect.right);
+      if(!inDialog) modal.close();
+    });
+
+    $('#copyTitle').addEventListener('click', ()=> copy(modalTitle.textContent));
+    $('#printWork').addEventListener('click', ()=> window.print());
+
+    $('#contactForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      toast('已记录（演示）。你可接入真实表单服务。');
+      e.target.reset();
+    });
+
+    // -----------------------------------------------------------
+    // 新增：自动修复裂图脚本
+    // 如果 Unsplash 图片加载失败，自动替换为文字占位图
+    // -----------------------------------------------------------
+    document.querySelectorAll('img').forEach(img => {
+      img.onerror = function() {
+        // 防止无限循环
+        this.onerror = null;
+        // 获取图片的 alt 文本作为占位符文字
+        const text = this.getAttribute('alt') || '图片加载失败';
+        // 使用 placehold.co 生成带文字的图片
+        this.src = `https://placehold.co/800x600/e2e8f0/475569?text=${encodeURIComponent(text)}`;
+        // 保持卡片美观
+        this.style.objectFit = 'cover';
+      };
+    });
+
+    const anchors = $$('.nav a');
+    const sections = anchors.map(a => $(a.getAttribute('href'))).filter(Boolean);
+    const obs = new IntersectionObserver((entries)=>{
+      for(const en of entries){
+        if(en.isIntersecting){
+          const id = '#' + en.target.id;
+          anchors.forEach(a => a.style.color = a.getAttribute('href') === id ? 'var(--text)' : '');
+        }
+      }
+    }, {rootMargin: '-40% 0px -55% 0px', threshold: 0.01});
+    sections.forEach(s => obs.observe(s));
+  </script>
+</body>
+</html>
